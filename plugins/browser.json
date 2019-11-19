@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.acme.app"
+    },
+    "cordova-plugin-permission": {
+      "PACKAGE_NAME": "com.acme.app"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.acme.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.acme.app"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.acme.app"
+    }
+  },
+  "dependent_plugins": {}
+}

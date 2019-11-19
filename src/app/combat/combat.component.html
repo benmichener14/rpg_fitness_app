@@ -1,0 +1,39 @@
+<head></head>
+<body>
+    <div class="bulk">
+        <h1>Combat</h1>
+        <br>
+        <div *ngIf="dailyAdventure">
+        <div *ngIf="!fighting">
+            <p>Current Health: {{yourHealth}}</p>
+            <p>Current Energy: {{yourEnergy}}</p>
+            <p>Gold earned this expedition: {{earnedGold}}</p>
+            <button *ngIf="yourHealth > 0" (click)="getEnemy()">Get a new enemy to fight!</button>
+            <button routerLink="/home" (click)="saveData()">Return from the expedition</button>
+        </div>
+        <div *ngIf="fighting">
+            <p>Your Health: {{yourHealth}}</p>
+            <p>Your Energy: {{yourEnergy}}</p>
+
+            <div class="slidecontainer">
+                <input type="range" min="0" max="{{yourEnergy}}" value="0" class="slider" [(ngModel)]="attackPower">
+                <button *ngIf="attackPower == 0" (click)="action()">Defend!</button>
+                <button *ngIf="attackPower > 0" (click)="action()">Attack! for {{attackPower}}</button>
+                <p>{{battleMessage}}</p>
+            </div>
+            
+            
+
+            <p>{{enemyName}} Health: {{enemyHealth}}</p>
+            <p>{{enemyName}} Energy: {{enemyEnergy}}</p>
+            <h6>{{enemyName}}</h6>
+        </div>
+    </div>
+    <div *ngIf="!dailyAdventure">
+        <h5>You have already gone on an adventure today!</h5>
+        <p>You can go on another adventure in tomorrow!</p>
+        <button routerLink="/home">Return Home</button>
+    </div>
+    </div>
+</body>
+<router-outlet></router-outlet>

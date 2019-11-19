@@ -1,0 +1,18 @@
+<head></head>
+<body>
+    <div class="bulk">
+        <h1>Tracking Component</h1>
+        <p *ngIf="!tracking">tracker is off!</p>
+        <p *ngIf="tracking">tracker is on!</p>
+        <button (click)="toggleTracking()">Click here to toggle tracking!</button>
+        <p>Distance travelled = {{currentDistance | number:'.3-3'}} Km</p>
+        <p>Time Elapsed = {{time | date:'HH:mm:ss'}}</p>
+        
+        <p>Current Latitude: {{savedLatitude}}</p>
+        <p>Current Longitude: {{savedLongitude}}</p>
+
+        <div *ngIf="!tracking">
+            <button routerLink="/adventure" (click)="saveData()">Click here to end your adventure!</button>
+        </div>
+    </div>
+</body>

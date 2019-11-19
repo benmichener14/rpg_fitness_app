@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 80%; }
+
+.icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.bulk {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.header{
+    height: 5%;
+}
+.input{
+    float: right;
+}
+
+body { 
+    margin: 0; 
+    font-family:"Luminari", fantasy; 
+    background-color: #ebd5b3;
+}
+
+h1 {
+    text-align: center;
+}
+
+button{
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+    margin-bottom: 5px;
+    background-color: #c99340;
+    border: 2px solid black;
+}
+
+select{
+    width: 100%;
+    background-color: #c99340;
+    border: 2px solid black;
+}
+
+input{
+    background-color: #c99340;
+    border: 2px solid black;
+}
