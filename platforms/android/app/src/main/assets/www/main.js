@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<head></head>\n<body>\n    <div class=\"bulk\">\n        <h1>RPG: Regular Phitness Game</h1>\n\n        <div class=\"icon\">\n            <img src=\"././assets/chest.png\" alt=\"RPG: Regular Phitness Game\" class=\"icon\">\n        </div>\n        \n        <button routerLink=\"/adventure\">Training Adventure</button>\n        <button routerLink=\"/combat\">Combat Adventure</button>\n    </div>\n</body>\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<head>\r\n  <link href=\"././assets/css-circular-prog-bar.css\" rel=\"stylesheet\">\r\n\r\n</head>\r\n\r\n<body>\r\n  <nav class=\"navbar fixed-top navbar-dark bg-dark\">\r\n    <span class=\"navbar-brand mb-0 h1 center\">Home</span>\r\n    <div *ngIf=\"!collapsed\" class=\"bg-dark p-4\">\r\n      <button routerLink=\"/adventure\" type=\"button\" class=\"btn btn-outline-primary\">Training Adventure</button>\r\n      <button routerLink=\"/combat\" type=\"button\" class=\"btn btn-outline-primary\">Combat Adventure</button>\r\n    </div>\r\n    <button (click)=\"collapsed = !collapsed\" class=\"navbar-toggler toggle-button\" type=\"button\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n  </nav>\r\n  <div class=\"bulk\">\r\n    <div class=\"icon\">\r\n      <img src=\"././assets/chest.png\" alt=\"RPG: Regular Phitness Game\" class=\"icon\">\r\n    </div>\r\n\r\n    <div class=\"container\">\r\n      <div class=\"col-5 align-left labelContainer\">\r\n        <p class=\"progressLabel\">Progress until next Endurance Increase</p>\r\n        <button (click)=\"enduranceGoal()\" type=\"button\" class=\"btn btn-outline-primary\">Check Goal</button>\r\n      </div>\r\n      <div class=\"col-7 align-right vertical-center\">\r\n        <div *ngIf=\"endurancePercentage <= 50\" class=\"progress-circle p{{endurancePercentage}}\">\r\n          <span>{{endurancePercentage}}%</span>\r\n          <div class=\"left-half-clipper\">\r\n            <div class=\"first50-bar\"></div>\r\n            <div class=\"value-bar\"></div>\r\n          </div>\r\n        </div>\r\n        <div *ngIf=\"endurancePercentage > 50\" class=\"progress-circle over50 p{{endurancePercentage}}\">\r\n          <span>{{endurancePercentage}}%</span>\r\n          <div class=\"left-half-clipper\">\r\n            <div class=\"first50-bar\"></div>\r\n            <div class=\"value-bar\"></div>\r\n          </div>\r\n        </div>\r\n        <br> <br>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"container\">\r\n        <div class=\"col-5 align-left labelContainer\">\r\n          <p class=\"progressLabel\">Progress until next Strength Increase</p>\r\n          <button (click)=\"strengthGoal()\" type=\"button\" class=\"btn btn-outline-primary\">Check Goal</button>\r\n        </div>\r\n        <div class=\"col-7 align-right vertical-center\">\r\n          <div *ngIf=\"strengthPercentage <= 50\" class=\"progress-circle p{{strengthPercentage}}\">\r\n            <span>{{strengthPercentage}}%</span>\r\n            <div class=\"left-half-clipper\">\r\n              <div class=\"first50-bar\"></div>\r\n              <div class=\"value-bar\"></div>\r\n            </div>\r\n          </div>\r\n          <div *ngIf=\"strengthPercentage > 50\" class=\"progress-circle over50 p{{strengthPercentage}}\">\r\n            <span>{{strengthPercentage}}%</span>\r\n            <div class=\"left-half-clipper\">\r\n              <div class=\"first50-bar\"></div>\r\n              <div class=\"value-bar\"></div>\r\n            </div>\r\n          </div>\r\n          <br> <br>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</body>\r\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -983,7 +983,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldRunDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("runSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("runSuccess", success);
                 }
                 var newRunNumber = Number(this.storage.getItem("runNumber"));
@@ -1013,7 +1013,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldSwimDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("swimSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("swimSuccess", success);
                 }
                 var newSwimNumber = Number(this.storage.getItem("swimNumber"));
@@ -1043,7 +1043,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldBikeDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("bikeSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("bikeSuccess", success);
                 }
                 var newBikeNumber = Number(this.storage.getItem("bikeNumber"));
@@ -1073,7 +1073,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("weightSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("weightSuccess", success);
                 }
                 var newWeightNumber = Number(this.storage.getItem("weightNumber"));
@@ -1104,7 +1104,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("pushSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("pushSuccess", success);
                 }
                 var newPushNumber = Number(this.storage.getItem("pushNumber"));
@@ -1133,7 +1133,7 @@ var FormsComponent = /** @class */ (function () {
                 else if (Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
                  {
                     var success = this.storage.getItem("sitSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("sitSuccess", success);
                 }
                 var newSitNumber = Number(this.storage.getItem("sitNumber"));
@@ -1206,7 +1206,7 @@ var FormsComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".center{\r\n  display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.progressLabel{ \r\n    text-align: center;\r\n  }\r\n\r\n.labelContainer{\r\n    width: 150px;\r\n    height: 188px;\r\n  }\r\n\r\n.align-left{\r\n    float: left;\r\n  }\r\n\r\n.align-right{\r\n    float:right;\r\n  }\r\n\r\n.icon{\r\n    margin-top: 40%;\r\n    margin-bottom: 5%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0lBQ1osaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGtCQUFrQjtFQUNwQjs7QUFDQTtJQUNFLFlBQVk7SUFDWixhQUFhO0VBQ2Y7O0FBRUE7SUFDRSxXQUFXO0VBQ2I7O0FBRUE7SUFDRSxXQUFXO0VBQ2I7O0FBQ0E7SUFDRSxlQUFlO0lBQ2YsaUJBQWlCO0VBQ25CIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2VudGVye1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbn1cclxuXHJcbi5wcm9ncmVzc0xhYmVseyBcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcbiAgLmxhYmVsQ29udGFpbmVye1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiAxODhweDtcclxuICB9XHJcblxyXG4gIC5hbGlnbi1sZWZ0e1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgfVxyXG5cclxuICAuYWxpZ24tcmlnaHR7XHJcbiAgICBmbG9hdDpyaWdodDtcclxuICB9XHJcbiAgLmljb257XHJcbiAgICBtYXJnaW4tdG9wOiA0MCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1JTtcclxuICB9Il19 */");
 
 /***/ }),
 
@@ -1232,6 +1232,7 @@ var HomeComponent = /** @class */ (function () {
         this.today = Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(new Date(), 'yyyy/MM/dd', 'en');
     }
     HomeComponent.prototype.ngOnInit = function () {
+        this.collapsed = true;
         this.lastEnduranceDate = this.storage.getItem("lastEnduranceDate");
         this.lastStrengthDate = this.storage.getItem("lastStrengthDate");
         var diff = Math.abs(new Date(this.storage.getItem("lastEnduranceDate")).getTime() - new Date(this.today).getTime());
@@ -1265,6 +1266,63 @@ var HomeComponent = /** @class */ (function () {
                 alert("Due to inactivity in strength related activities, your strength is now back down to its original value of 10.");
             }
             this.storage.setItem("lastStrengthDecrease", Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(new Date(), 'yyyy/MM/dd', 'en'));
+        }
+        this.getGoals();
+    };
+    HomeComponent.prototype.getGoals = function () {
+        var runSuccess = Number(this.storage.getItem("runSuccess"));
+        var bikeSuccess = Number(this.storage.getItem("bikeSuccess"));
+        var swimSuccess = Number(this.storage.getItem("swimSuccess"));
+        if (runSuccess >= bikeSuccess && runSuccess >= swimSuccess) {
+            this.enduranceType = "run";
+            this.endurancePercentage = 100 * (runSuccess / 4);
+        }
+        else if (bikeSuccess >= runSuccess && bikeSuccess >= swimSuccess) {
+            this.enduranceType = "swim";
+            this.endurancePercentage = 100 * (swimSuccess / 4);
+        }
+        else if (swimSuccess >= runSuccess && swimSuccess >= bikeSuccess) {
+            this.enduranceType = "swim";
+            this.endurancePercentage = 100 * (swimSuccess / 4);
+        }
+        var weightSuccess = Number(this.storage.getItem("weightSuccess"));
+        var pushSuccess = Number(this.storage.getItem("pushSuccess"));
+        var sitSuccess = Number(this.storage.getItem("sitSuccess"));
+        var chinSuccess = Number(this.storage.getItem("chinSuccess"));
+        if (weightSuccess >= pushSuccess && weightSuccess >= sitSuccess && weightSuccess >= chinSuccess) {
+            this.strengthType = "weight";
+            this.strengthPercentage = 100 * (weightSuccess / 4);
+        }
+        else if (pushSuccess >= weightSuccess && pushSuccess >= sitSuccess && pushSuccess >= chinSuccess) {
+            this.strengthType = "push";
+            this.strengthPercentage = 100 * (pushSuccess / 4);
+        }
+        else if (sitSuccess >= pushSuccess && sitSuccess >= weightSuccess && sitSuccess >= chinSuccess) {
+            this.strengthType = "sit";
+            this.strengthPercentage = 100 * (sitSuccess / 4);
+        }
+        else if (chinSuccess >= pushSuccess && chinSuccess >= sitSuccess && chinSuccess >= weightSuccess) {
+            this.strengthType = "chin";
+            this.strengthPercentage = 100 * (chinSuccess / 4);
+        }
+    };
+    HomeComponent.prototype.enduranceGoal = function () {
+        var newEnduranceGoal = 1.15 * Number(this.storage.getItem(this.enduranceType + "Distance"));
+        alert("Your Next Goal: \nTry to " + this.enduranceType + " at least " + newEnduranceGoal + " km to get two more successes towards your Endurance.");
+    };
+    HomeComponent.prototype.strengthGoal = function () {
+        var newStrengthGoal = 1.15 * Number(this.storage.getItem(this.strengthType + "Reps"));
+        if (this.strengthType == "weight") {
+            alert("Your Next Goal: \nTry to lift" + this.storage.getItem("weightWeight") + " lbs for at least " + this.storage.getItem("weightSets") + " sets of " + newStrengthGoal + " reps to get two more successes towards your Strength.");
+        }
+        if (this.strengthType == "push") {
+            alert("Your Next Goal: \nTry to do at least " + this.storage.getItem("pushSets") + " sets of push ups, with " + newStrengthGoal + " reps to get two more successes towards your Strength.");
+        }
+        if (this.strengthType == "sit") {
+            alert("Your Next Goal: \nTry to do at least " + this.storage.getItem("sitSets") + " sets of sit ups, with " + newStrengthGoal + " reps to get two more successes towards your Strength.");
+        }
+        if (this.strengthType == "chin") {
+            alert("Your Next Goal: \nTry to do at least " + this.storage.getItem("chinSets") + " sets of chin ups, with " + newStrengthGoal + " reps to get two more successes towards your Strength.");
         }
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1522,10 +1580,10 @@ var TrackerComponent = /** @class */ (function () {
             success = String(Number(success) + 1);
             this.storage.setItem("runSuccess", success);
         }
-        if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
+        else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
          {
             var success = this.storage.getItem("runSuccess");
-            success = String(Number(success) + 1);
+            success = String(Number(success) + 2);
             this.storage.setItem("runSuccess", success);
         }
         if (this.currentDistance > 0) {

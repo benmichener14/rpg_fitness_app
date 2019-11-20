@@ -1,14 +1,71 @@
-<head></head>
-<body>
-    <div class="bulk">
-        <h1>RPG: Regular Phitness Game</h1>
+<head>
+  <link href="././assets/css-circular-prog-bar.css" rel="stylesheet">
 
-        <div class="icon">
-            <img src="././assets/chest.png" alt="RPG: Regular Phitness Game" class="icon">
-        </div>
-        
-        <button routerLink="/adventure">Training Adventure</button>
-        <button routerLink="/combat">Combat Adventure</button>
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1 center">Home</span>
+    <div *ngIf="!collapsed" class="bg-dark p-4">
+      <button routerLink="/adventure" type="button" class="btn btn-outline-primary">Training Adventure</button>
+      <button routerLink="/combat" type="button" class="btn btn-outline-primary">Combat Adventure</button>
     </div>
+    <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="bulk">
+    <div class="icon">
+      <img src="././assets/chest.png" alt="RPG: Regular Phitness Game" class="icon">
+    </div>
+
+    <div class="container">
+      <div class="col-5 align-left labelContainer">
+        <p class="progressLabel">Progress until next Endurance Increase</p>
+        <button (click)="enduranceGoal()" type="button" class="btn btn-outline-primary">Check Goal</button>
+      </div>
+      <div class="col-7 align-right vertical-center">
+        <div *ngIf="endurancePercentage <= 50" class="progress-circle p{{endurancePercentage}}">
+          <span>{{endurancePercentage}}%</span>
+          <div class="left-half-clipper">
+            <div class="first50-bar"></div>
+            <div class="value-bar"></div>
+          </div>
+        </div>
+        <div *ngIf="endurancePercentage > 50" class="progress-circle over50 p{{endurancePercentage}}">
+          <span>{{endurancePercentage}}%</span>
+          <div class="left-half-clipper">
+            <div class="first50-bar"></div>
+            <div class="value-bar"></div>
+          </div>
+        </div>
+        <br> <br>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="col-5 align-left labelContainer">
+          <p class="progressLabel">Progress until next Strength Increase</p>
+          <button (click)="strengthGoal()" type="button" class="btn btn-outline-primary">Check Goal</button>
+        </div>
+        <div class="col-7 align-right vertical-center">
+          <div *ngIf="strengthPercentage <= 50" class="progress-circle p{{strengthPercentage}}">
+            <span>{{strengthPercentage}}%</span>
+            <div class="left-half-clipper">
+              <div class="first50-bar"></div>
+              <div class="value-bar"></div>
+            </div>
+          </div>
+          <div *ngIf="strengthPercentage > 50" class="progress-circle over50 p{{strengthPercentage}}">
+            <span>{{strengthPercentage}}%</span>
+            <div class="left-half-clipper">
+              <div class="first50-bar"></div>
+              <div class="value-bar"></div>
+            </div>
+          </div>
+          <br> <br>
+        </div>
+      </div>
+  </div>
 </body>
 <router-outlet></router-outlet>

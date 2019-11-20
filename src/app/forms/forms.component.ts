@@ -65,7 +65,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldRunDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("runSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("runSuccess", success);
         }
 
@@ -100,7 +100,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldSwimDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("swimSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("swimSuccess", success);
         }
 
@@ -135,7 +135,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldBikeDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("bikeSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("bikeSuccess", success);
         }
 
@@ -170,7 +170,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("weightSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("weightSuccess", success);
         }
 
@@ -206,7 +206,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("pushSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("pushSuccess", success);
         }
 
@@ -240,7 +240,7 @@ export class FormsComponent implements OnInit {
         else if (Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("sitSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("sitSuccess", success);
         }
 

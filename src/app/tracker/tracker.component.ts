@@ -110,10 +110,10 @@ export class TrackerComponent implements OnInit {
       success = String(Number(success) + 1);
       this.storage.setItem("runSuccess", success);
     }
-    if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
+    else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
     {
       let success = this.storage.getItem("runSuccess")
-      success = String(Number(success) + 1);
+      success = String(Number(success) + 2);
       this.storage.setItem("runSuccess", success);
     }
 
