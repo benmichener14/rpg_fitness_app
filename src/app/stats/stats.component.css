@@ -1,0 +1,9 @@
+.data{
+    width: 100%;
+    float:center;
+}
+
+.changeCat{
+    font-size: 20px;
+    font-weight: 400;
+}

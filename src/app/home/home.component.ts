@@ -88,8 +88,8 @@ export class HomeComponent implements OnInit {
     }
     else if( bikeSuccess >= runSuccess && bikeSuccess >= swimSuccess )
     {
-      this.enduranceType = "swim";
-      this.endurancePercentage = 100 * (swimSuccess / 4);
+      this.enduranceType = "bike";
+      this.endurancePercentage = 100 * (bikeSuccess / 4);
     }
     else if( swimSuccess >= runSuccess && swimSuccess >= bikeSuccess )
     {

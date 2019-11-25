@@ -1,11 +1,18 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "rpg_app",
-  "short_name": "rpg_app",
+  "name": "RPG: Regular Phitness Game",
+  "short_name": "RPG: Regular Phitness Game",
   "version": "com.acme.app",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
-  "icons": [],
+  "description": "A basic fitness app that encourages me to go out and exercise!",
+  "author": "Ben Michener",
+  "icons": [
+    {
+      "src": "www/assets/chest.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    }
+  ],
+  "orientation": "portrait",
   "start_url": "index.html"
 }

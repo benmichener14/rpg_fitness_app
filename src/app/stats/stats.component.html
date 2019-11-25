@@ -1,72 +1,91 @@
 <head></head>
+
 <body>
     <div class="bulk">
-        <h1>Stats</h1>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1 center">Stats</span>
+            <div *ngIf="!collapsed" class="bg-dark p-4">
+                <button routerLink="/home" type="button" class="btn btn-outline-primary">Return Home</button>
+                <button routerLink="/adventure" type="button" class="btn btn-outline-primary">Training
+                    Adventure</button>
+                <button routerLink="/combat" type="button" class="btn btn-outline-primary">Combat Stats</button>
+            </div>
+            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
 
-        <button routerLink="/adventure">Return to the Adventure</button>
+        <div class="content">
 
-        <div>
-            <h4>User Data:</h4>
-            <p>Endurance: {{endurance}}</p>
-            <p>Strength: {{strength}}</p>
-            <p>Gold: {{gold}}</p>
-        </div>
-        
-        <div>
-            <h4>Running:</h4>
-            <p>Average Distance: {{runDistance | number:'.3-3'}} Km</p>
-            <p>Average Time: {{runTime | date:'HH:mm:ss'}}</p>
-            <p>Number of Runs Recorded: {{runNumber}}</p>
-            <p>Number of successful runs until next stat increase: {{4 - runSuccess}}</p>
-        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <button class="changeCat" (click)="catDown()">&#60;</button>
+                    </div>
+                    <div class="col-6">
+                        <h4 class="text-center">{{category[index]}}:</h4>
+                    </div>
+                    <div class="col-3">
+                        <button class="changeCat" (click)="catUp()">&#62;</button>
+                    </div>
+                </div>
+            </div>
 
-        <div>
-            <h4>Swimming:</h4>
-            <p>Average Distance: {{swimDistance | number:'.3-3'}} Km</p>
-            <p>Average Time: {{swimTime | date:'HH:mm:ss'}}</p>
-            <p>Number of Swims Recorded: {{swimNumber}}</p>
-            <p>Number of successful swims until next stat increase: {{4 - swimSuccess}}</p>
-        </div>
+            <div class="data" *ngIf="category[index] == 'User Data'">
+                <p>Endurance: {{endurance}}</p>
+                <p>Strength: {{strength}}</p>
+                <p>Gold: {{gold}}</p>
+            </div>
 
-        <div>
-            <h4>Biking:</h4>
-            <p>Average Distance: {{bikeDistance | number:'.3-3'}} Km</p>
-            <p>Average Time: {{bikeTime | date:'HH:mm:ss'}}</p>
-            <p>Number of Bike rides Recorded: {{bikeNumber}}</p>
-            <p>Number of successful bike rides until next stat increase: {{4 - bikeSuccess}}</p>
-        </div>
+            <div class="data" *ngIf="category[index] == 'Running'">
+                <p>Average Distance: {{runDistance | number:'.3-3'}} Km</p>
+                <p>Average Time: {{runTime | date:'HH:mm:ss'}}</p>
+                <p>Number of Runs Recorded: {{runNumber}}</p>
+                <p>Number of successful runs until next stat increase: {{4 - runSuccess}}</p>
+            </div>
 
-        <div>
-            <h4>Weight Lifting:</h4>
-            <p>Average Weight: {{weightWeight | number:'.3-3'}}</p>
-            <p>Average Reps: {{weightReps | number:'.3-3'}}</p>
-            <p>Average Sets: {{weightSets | number:'.3-3'}}</p>
-            <p>Number of Weight Lifting Sessions Recorded: {{weightNumber}}</p>
-            <p>Number of successful weight lifting sessions until next stat increase: {{4 - weightSuccess}}</p>
-        </div>
+            <div class="data" *ngIf="category[index] == 'Swimming'">
+                <p>Average Distance: {{swimDistance | number:'.3-3'}} Km</p>
+                <p>Average Time: {{swimTime | date:'HH:mm:ss'}}</p>
+                <p>Number of Swims Recorded: {{swimNumber}}</p>
+                <p>Number of successful swims until next stat increase: {{4 - swimSuccess}}</p>
+            </div>
 
-        <div>
-            <h4>Push Ups:</h4>
-            <p>Average Reps: {{pushReps | number:'.3-3'}}</p>
-            <p>Average Sets: {{pushSets | number:'.3-3'}}</p>
-            <p>Number of Push Up Sessions Recorded: {{pushNumber}}</p>
-            <p>Number of successful push up sessions until next stat increase: {{4 - pushSuccess}}</p>
-        </div>
+            <div class="data" *ngIf="category[index] == 'Biking'">
+                <p>Average Distance: {{bikeDistance | number:'.3-3'}} Km</p>
+                <p>Average Time: {{bikeTime | date:'HH:mm:ss'}}</p>
+                <p>Number of Bike rides Recorded: {{bikeNumber}}</p>
+                <p>Number of successful bike rides until next stat increase: {{4 - bikeSuccess}}</p>
+            </div>
 
-        <div>
-            <h4>Sit Ups:</h4>
-            <p>Average Reps: {{sitReps | number:'.3-3'}}</p>
-            <p>Average Sets: {{sitSets | number:'.3-3'}}</p>
-            <p>Number of Sit Up Sessions Recorded: {{sitNumber}}</p>
-            <p>Number of successful sit up sessions until next stat increase: {{4 - sitSuccess}}</p>
-        </div>
+            <div class="data" *ngIf="category[index] == 'Weight Lifting'">
+                <p>Average Weight: {{weightWeight | number:'.0-0'}}</p>
+                <p>Average Reps: {{weightReps | number:'.0-0'}}</p>
+                <p>Average Sets: {{weightSets | number:'.0-0'}}</p>
+                <p>Number of Weight Lifting Sessions Recorded: {{weightNumber}}</p>
+                <p>Number of successful weight lifting sessions until next stat increase: {{4 - weightSuccess}}</p>
+            </div>
 
-        <div>
-            <h4>Chin Ups:</h4>
-            <p>Average Reps: {{chinReps | number:'.3-3'}}</p>
-            <p>Average Sets: {{chinSets | number:'.3-3'}}</p>
-            <p>Number of Chin Up Sessions Recorded: {{chinNumber}}</p>
-            <p>Number of successful chin up sessions until next stat increase: {{4 - chinSuccess}}</p>
+            <div class="data" *ngIf="category[index] == 'Push Ups'">
+                <p>Average Reps: {{pushReps | number:'.0-0'}}</p>
+                <p>Average Sets: {{pushSets | number:'.0-0'}}</p>
+                <p>Number of Push Up Sessions Recorded: {{pushNumber}}</p>
+                <p>Number of successful push up sessions until next stat increase: {{4 - pushSuccess}}</p>
+            </div>
+
+            <div class="data" *ngIf="category[index] == 'Sit Ups'">
+                <p>Average Reps: {{sitReps | number:'.0-0'}}</p>
+                <p>Average Sets: {{sitSets | number:'.0-0'}}</p>
+                <p>Number of Sit Up Sessions Recorded: {{sitNumber}}</p>
+                <p>Number of successful sit up sessions until next stat increase: {{4 - sitSuccess}}</p>
+            </div>
+
+            <div class="data" *ngIf="category[index] == 'Chin Ups'">
+                <p>Average Reps: {{chinReps | number:'.0-0'}}</p>
+                <p>Average Sets: {{chinSets | number:'.0-0'}}</p>
+                <p>Number of Chin Up Sessions Recorded: {{chinNumber}}</p>
+                <p>Number of successful chin up sessions until next stat increase: {{4 - chinSuccess}}</p>
+            </div>
         </div>
     </div>
 </body>

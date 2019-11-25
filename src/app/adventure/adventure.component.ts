@@ -9,6 +9,7 @@ import { formatDate } from '@angular/common';
 export class AdventureComponent implements OnInit {
 
   storage = window.localStorage;
+  collapsed: boolean;
 
   firstRun: boolean;
   averageDistance: number;
@@ -20,6 +21,7 @@ export class AdventureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.collapsed = true;
     this.averageDistance = Number(this.storage.getItem("runDistance"));
     this.averageTime = new Date(0, 0, 0, 0, 0, 0);
     this.averageTime.setSeconds(Number(this.storage.getItem("runTime")) / 1000);

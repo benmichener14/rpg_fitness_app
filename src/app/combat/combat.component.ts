@@ -13,6 +13,7 @@ export class CombatComponent implements OnInit {
   storage = window.localStorage;
 
   fighting: boolean = false;
+  collapsed: boolean;
   today = formatDate(new Date(), 'yyyy/MM/dd', 'en');
 
   dailyAdventure: boolean;
@@ -54,6 +55,7 @@ export class CombatComponent implements OnInit {
   ]};
 
   ngOnInit() {
+    this.collapsed = true;
     this.yourHealth = Number(this.storage.getItem("endurance"));
     this.yourEnergy = Number(this.storage.getItem("strength"));
     this.attackPower = 0;

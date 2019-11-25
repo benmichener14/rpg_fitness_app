@@ -8,6 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class StatsComponent implements OnInit {
 
   storage = window.localStorage;
+  collapsed: boolean;
+  category = ["User Data",
+    "Running",
+    "Swimming",
+    "Biking",
+    "Weight Lifting",
+    "Push Ups",
+    "Sit Ups",
+    "Chin Ups"];
+
+  index;
 
   runDistance;
   runTime;
@@ -52,6 +63,9 @@ export class StatsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.collapsed = true;
+    this.index = 0;
+
     this.runDistance = this.storage.getItem("runDistance");
     this.runTime = new Date(0, 0, 0, 0, 0, 0);
     this.runTime.setSeconds(Number(this.storage.getItem("runTime")) / 1000);
@@ -90,10 +104,29 @@ export class StatsComponent implements OnInit {
     this.chinSets = this.storage.getItem("chinSets");
     this.chinNumber = this.storage.getItem("chinNumber");
     this.chinSuccess = this.storage.getItem("chinSuccess");
-    
+
     this.endurance = this.storage.getItem("endurance");
     this.strength = this.storage.getItem("strength");
     this.gold = this.storage.getItem("gold");
   }
 
+  catUp(){
+    this.index ++;
+
+    if(this.index >= this.category.length)
+    {
+      this.index = 0;
+    }
+    console.log(this.index);
+  }
+
+  catDown(){
+    this.index --;
+
+    if(this.index == -1)
+    {
+      this.index = this.category.length - 1;
+    }
+    console.log(this.index);
+  }
 }

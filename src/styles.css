@@ -27,6 +27,14 @@ body {
     font-family:"Luminari", fantasy; 
     background-color: #ebd5b3;
 }
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.content{
+  margin-top: 40%;
+}
 
 h1 {
     text-align: center;
@@ -50,4 +58,24 @@ select{
 input{
     background-color: #c99340;
     border: 2px solid black;
+}
+
+.align-left{
+    float: left;
+}
+  
+.align-right{
+    float:right;
+}
+  
+.text-right{
+    text-align: right;
+}
+  
+.text-center{
+    text-align: center;
+}
+  
+.text-left{
+    text-align: left;
 }

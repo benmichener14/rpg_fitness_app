@@ -1,25 +1,34 @@
 .center{
   display: block;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .progressLabel{ 
-    text-align: center;
-  }
-  .labelContainer{
-    width: 150px;
-    height: 188px;
+  text-align: center;
+  margin-top: 20%;
   }
 
-  .align-left{
-    float: left;
-  }
+.progressButton{
+  position: absolute; 
+  bottom: 15px;
+  width: 90%;
+}
 
-  .align-right{
-    float:right;
-  }
-  .icon{
-    margin-top: 40%;
-    margin-bottom: 5%;
-  }
+.labelContainer{
+  width: 150px;
+  height: 188px;
+}
+
+.align-left{
+  float: left;
+}
+
+.align-right{
+  float:right;
+}
+
+.icon{
+  margin-top: 40%;
+  margin-bottom: 5%;
+}
