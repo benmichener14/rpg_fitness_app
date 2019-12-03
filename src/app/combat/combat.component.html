@@ -4,11 +4,12 @@
     <div class="bulk">
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1 center">Combat</span>
-            <div *ngIf="!collapsed" class="bg-dark p-4">
+            <div *ngIf="!collapsed" class="bg-dark navigation">
                 <div *ngIf="!fighting">
                     <button routerLink="/home" type="button" class="btn btn-outline-primary" (click)="saveData()">Return Home</button>
                     <button routerLink="/adventure" type="button" class="btn btn-outline-primary" (click)="saveData()">Training Adventure</button>
                     <button routerLink="/stats" type="button" class="btn btn-outline-primary" (click)="saveData()">View Stats</button>
+                    <button type="button" class="btn btn-outline-primary" (click)="help()">Help</button>
                 </div>
             </div>
             <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
@@ -21,11 +22,11 @@
                     <p>Current Health: {{yourHealth}}</p>
                     <p>Current Energy: {{yourEnergy}}</p>
                     <p>Gold earned this expedition: {{earnedGold}}</p>
-                    <button *ngIf="yourHealth > 0" (click)="getEnemy()">Get a new enemy to fight!</button>
+                    <button *ngIf="yourHealth > 0" (click)="getEnemy()" class="btn btn-outline-primary">Get a new enemy to fight!</button>
                 </div>
                 <div *ngIf="fighting">
                     <div class="container">
-                        <div class="border">
+                        <div class="">
                             <div class="row">
                                 <div class="col-6">
                                     <img src="././assets/M.png" alt="Enemy" class="yourIcon align-left">
@@ -57,7 +58,7 @@
                         <button *ngIf="attackPower == 0" (click)="action()">Defend!</button>
                         <button *ngIf="attackPower > 0" (click)="action()">Attack! for {{attackPower}}</button>
                         <div *ngIf="battleMessage">
-                            <h5 class="battleMessage">{{battleMessage}}</h5>
+                            <p class="battleMessage">{{battleMessage}}</p>
                         </div>
                     </div>
 

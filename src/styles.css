@@ -2,6 +2,14 @@
 
 html, body { height: 80%; }
 
+.navigation{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 .icon{
     display: block;
     margin-left: auto;

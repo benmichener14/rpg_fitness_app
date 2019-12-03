@@ -129,4 +129,9 @@ export class StatsComponent implements OnInit {
     }
     console.log(this.index);
   }
+
+  help(){
+    if(confirm("This is the page where you can view all of the data collected by the app! Feel free to poke around. There is some cool stuff here."))
+    {}
+  }
 }

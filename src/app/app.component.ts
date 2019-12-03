@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
       }, false);
       var storage = window.localStorage;
 
+      if (!Number(storage.getItem("firstTime"))) { storage.setItem("firstTime", "true"); }
+
       if (!Number(storage.getItem("runDistance"))) { storage.setItem("runDistance", "0"); }
       if (!Number(storage.getItem("runTime"))) { storage.setItem("runTime", "0"); }
       if (!Number(storage.getItem("runNumber"))) { storage.setItem("runNumber", "0"); }

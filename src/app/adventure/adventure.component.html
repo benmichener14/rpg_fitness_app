@@ -4,11 +4,13 @@
     <div class="bulk">
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1 center">Training</span>
-            <div *ngIf="!collapsed" class="bg-dark p-4">
+            <div *ngIf="!collapsed" class="bg-dark navigation">
                 <div *ngIf="!fighting">
                     <button routerLink="/home" type="button" class="btn btn-outline-primary">Return Home</button>
                     <button routerLink="/combat" type="button" class="btn btn-outline-primary">Combat Adventure</button>
                     <button routerLink="/stats" type="button" class="btn btn-outline-primary">View Stats</button>
+                    <br>
+                    <button type="button" (click)="help()" class="btn btn-outline-primary">Help</button>
                 </div>
             </div>
             <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">

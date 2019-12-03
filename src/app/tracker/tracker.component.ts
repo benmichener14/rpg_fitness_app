@@ -10,6 +10,7 @@ import { formatDate } from '@angular/common';
 export class TrackerComponent implements OnInit {
 
   storage = window.localStorage;
+  collapsed;
 
   tracking: boolean = false;
   savedLatitude;
@@ -22,13 +23,22 @@ export class TrackerComponent implements OnInit {
   timerRef;
   time: Date;
 
+  goalPercentage: number;
+  goal: number;
+
   constructor() {
   }
 
   public ngOnInit(): void {
+    this.collapsed = true;
+    this.time = new Date(0, 0, 0, 0, 0, 0);
+    this.time.setSeconds(0);
     this.getLocation();
     console.log("Saved Latitude: " + this.savedLatitude);
     console.log("Saved Longitude: " + this.savedLongitude);
+
+    this.goalPercentage = 0;
+    this.goal = Number(this.storage.getItem("runDistance"));
   }
 
 
@@ -71,6 +81,8 @@ export class TrackerComponent implements OnInit {
         console.log("New Distance: " + this.currentDistance);
         this.savedLatitude = latitude;
         this.savedLongitude = longitude;
+
+        this.goalPercentage = 100 * (this.currentDistance/this.goal)
       }
       //setTimeout(() => {}, 5000);
     },

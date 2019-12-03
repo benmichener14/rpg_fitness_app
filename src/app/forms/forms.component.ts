@@ -18,6 +18,7 @@ export class FormsComponent implements OnInit {
   weight: number;
   reps: number;
   sets: number;
+  collapsed: boolean;
 
   selectedExercise = { id: -1, name: "Default" };
   data: Array<Object> = [
@@ -34,6 +35,7 @@ export class FormsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.collapsed = true;
   }
 
   selected() {
@@ -62,7 +64,7 @@ export class FormsComponent implements OnInit {
           success = String(Number(success) + 1);
           this.storage.setItem("runSuccess", success);
         }
-        else if (Number(oldRunDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
+        else if (Number(oldRunDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("runSuccess")
           success = String(Number(success) + 2);
@@ -97,7 +99,7 @@ export class FormsComponent implements OnInit {
           success = String(Number(success) + 1);
           this.storage.setItem("swimSuccess", success);
         }
-        else if (Number(oldSwimDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
+        else if (Number(oldSwimDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("swimSuccess")
           success = String(Number(success) + 2);
@@ -132,7 +134,7 @@ export class FormsComponent implements OnInit {
           success = String(Number(success) + 1);
           this.storage.setItem("bikeSuccess", success);
         }
-        else if (Number(oldBikeDistance) * 1.15 < counter) //Getting above 15% of your average marks an extra success
+        else if (Number(oldBikeDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
         {
           let success = this.storage.getItem("bikeSuccess")
           success = String(Number(success) + 2);
