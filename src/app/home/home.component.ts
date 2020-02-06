@@ -113,7 +113,8 @@ export class HomeComponent implements OnInit {
       this.strengthPercentage = 100 * (chinSuccess / 4);
     }
 
-    if (!(runSuccess == 0 && bikeSuccess == 0 && swimSuccess == 0 && weightSuccess == 0 && pushSuccess == 0 && sitSuccess == 0 && chinSuccess == 0)) {
+    if (!(Number(this.storage.getItem("runDistance")) == 0 && Number(this.storage.getItem("bikeDistance")) == 0 && Number(this.storage.getItem("swimDistance")) == 0 && Number(this.storage.getItem("weightReps")) == 0 && Number(this.storage.getItem("pushReps")) == 0 && Number(this.storage.getItem("sitReps")) == 0 && Number(this.storage.getItem("chinReps")) == 0)) 
+    {
       this.firstTime = false;
       this.storage.setItem("firstTime", "false");
     }

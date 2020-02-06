@@ -39,6 +39,10 @@ export class TrackerComponent implements OnInit {
 
     this.goalPercentage = 0;
     this.goal = Number(this.storage.getItem("runDistance"));
+    if(this.goal == 0)
+    {
+      this.goal = 0.001;
+    }
   }
 
 
@@ -115,17 +119,18 @@ export class TrackerComponent implements OnInit {
   saveData() {
     let oldRunDistance = this.storage.getItem("runDistance");
     let oldRunTime = this.storage.getItem("runTime");
-
-    if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * .9 <= this.currentDistance) //Getting withing 10% of your regular goal marks a success for the week
-    {
-      let success = this.storage.getItem("runSuccess")
-      success = String(Number(success) + 1);
-      this.storage.setItem("runSuccess", success);
-    }
-    else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
+    //Getting withing 10% of your regular goal marks a success for the week
+    //Getting above 15% of your average marks an extra success
+    if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 <= this.currentDistance) //Getting withing 10% of your regular goal marks a success for the week
     {
       let success = this.storage.getItem("runSuccess")
       success = String(Number(success) + 2);
+      this.storage.setItem("runSuccess", success);
+    }
+    else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 0.9 < this.currentDistance) //Getting above 15% of your average marks an extra success
+    {
+      let success = this.storage.getItem("runSuccess")
+      success = String(Number(success) + 1);
       this.storage.setItem("runSuccess", success);
     }
 

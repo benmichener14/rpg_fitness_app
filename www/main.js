@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<head></head>\n\n<body>\n    <div class=\"bulk\">\n        <nav class=\"navbar fixed-top navbar-dark bg-dark\">\n            <span class=\"navbar-brand mb-0 h1 center\">Combat</span>\n            <div *ngIf=\"!collapsed\" class=\"bg-dark navigation\">\n                <div *ngIf=\"!fighting\">\n                    <button routerLink=\"/home\" type=\"button\" class=\"btn btn-outline-primary\" (click)=\"saveData()\">Return Home</button>\n                    <button routerLink=\"/adventure\" type=\"button\" class=\"btn btn-outline-primary\" (click)=\"saveData()\">Training Adventure</button>\n                    <button routerLink=\"/stats\" type=\"button\" class=\"btn btn-outline-primary\" (click)=\"saveData()\">View Stats</button>\n                    <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"help()\">Help</button>\n                </div>\n            </div>\n            <button (click)=\"collapsed = !collapsed\" class=\"navbar-toggler toggle-button\" type=\"button\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n        </nav>\n        <div class=\"content\">\n            <div *ngIf=\"dailyAdventure\">\n                <div *ngIf=\"!fighting\">\n                    <p>Current Health: {{yourHealth}}</p>\n                    <p>Current Energy: {{yourEnergy}}</p>\n                    <p>Gold earned this expedition: {{earnedGold}}</p>\n                    <button *ngIf=\"yourHealth > 0\" (click)=\"getEnemy()\" class=\"btn btn-outline-primary\">Get a new enemy to fight!</button>\n                </div>\n                <div *ngIf=\"fighting\">\n                    <div class=\"container\">\n                        <div class=\"\">\n                            <div class=\"row\">\n                                <div class=\"col-6\">\n                                    <img src=\"././assets/M.png\" alt=\"Enemy\" class=\"yourIcon align-left\">\n                                </div>\n                                <div class=\"col-6\">\n                                    <img src=\"././assets/{{enemyName}}.png\" alt=\"Enemy\"\n                                        class=\"enemyIcon  align-right\">\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"col-6\">\n                                <h5>You</h5>\n                                <p class=\"text-left\"><b>Health:</b> {{yourHealth}}</p>\n                                <p class=\"text-left\"><b>Energy:</b> {{yourEnergy}}</p>\n                            </div>\n                            <div class=\"col-6\">\n                                <h5 class=\"text-center\">{{enemyName}}</h5>\n                                <p class=\"text-right\"><b>Health:</b> {{enemyHealth}}</p>\n                                <p class=\"text-right\"><b>Energy:</b> {{enemyEnergy}}</p>\n                            </div>\n                        </div>\n                    </div>\n\n\n                    <div class=\"slidecontainer\">\n                        <input type=\"range\" min=\"0\" max=\"{{yourEnergy}}\" value=\"0\" class=\"slider\"\n                            [(ngModel)]=\"attackPower\">\n                        <button *ngIf=\"attackPower == 0\" (click)=\"action()\">Defend!</button>\n                        <button *ngIf=\"attackPower > 0\" (click)=\"action()\">Attack! for {{attackPower}}</button>\n                        <div *ngIf=\"battleMessage\">\n                            <p class=\"battleMessage\">{{battleMessage}}</p>\n                        </div>\n                    </div>\n\n\n                </div>\n            </div>\n            <div *ngIf=\"!dailyAdventure\">\n                <h5 class=\"text-center\">You have already gone on an adventure today!</h5>\n                <p class=\"text-center\">You can go on another adventure in tomorrow!</p>\n            </div>\n        </div>\n    </div>\n</body>\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<head></head>\n\n<body>\n    <div class=\"bulk\">\n        <nav class=\"navbar fixed-top navbar-dark bg-dark\">\n            <span class=\"navbar-brand mb-0 h1 center\">Combat</span>\n            <div *ngIf=\"!collapsed\" class=\"bg-dark navigation\">\n                <div *ngIf=\"!fighting\">\n                    <button routerLink=\"/home\" type=\"button\" class=\"btn btn-outline-primary\" (click)=\"saveData()\">Return\n                        Home</button>\n                    <button routerLink=\"/adventure\" type=\"button\" class=\"btn btn-outline-primary\"\n                        (click)=\"saveData()\">Training Adventure</button>\n                    <button routerLink=\"/stats\" type=\"button\" class=\"btn btn-outline-primary\" (click)=\"saveData()\">View\n                        Stats</button>\n                    <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"help()\">Help</button>\n                </div>\n            </div>\n            <button (click)=\"collapsed = !collapsed\" class=\"navbar-toggler toggle-button\" type=\"button\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n        </nav>\n        <div class=\"content\">\n            <div *ngIf=\"dailyAdventure\">\n                <div *ngIf=\"!fighting\" class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-9\">\n                            <p class=\"text-left\"><b>Current Health:</b></p>\n                        </div>\n                        <div class=\"col-3\">\n                            <p class=\"text-right\">{{yourHealth}}</p>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-9\">\n                            <p class=\"text-left\"><b>Current Energy:</b></p>\n                        </div>\n                        <div class=\"col-3\">\n                            <p class=\"text-right\">{{yourEnergy}}</p>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-9\">\n                            <p class=\"text-left\"><b>Gold earned this expedition:</b></p>\n                        </div>\n                        <div class=\"col-3\">\n                            <p class=\"text-right\">{{earnedGold}}</p>\n                        </div>\n                    </div>\n                    <button *ngIf=\"yourHealth > 0\" (click)=\"getEnemy()\" class=\"btn btn-outline-primary\">Get a new enemy\n                        to fight!</button>\n                </div>\n                <div *ngIf=\"fighting\">\n                    <div class=\"container\">\n                        <div class=\"\">\n                            <div class=\"row\">\n                                <div class=\"col-6\">\n                                    <img src=\"././assets/M.png\" alt=\"Enemy\" class=\"yourIcon align-left\">\n                                </div>\n                                <div class=\"col-6\">\n                                    <img src=\"././assets/{{enemyName}}.png\" alt=\"Enemy\" class=\"enemyIcon  align-right\">\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"col-6\">\n                                <h5>You</h5>\n                                <p class=\"text-left\"><b>Health:</b> {{yourHealth}}</p>\n                                <p class=\"text-left\"><b>Energy:</b> {{yourEnergy}}</p>\n                            </div>\n                            <div class=\"col-6\">\n                                <h5 class=\"text-center\">{{enemyName}}</h5>\n                                <p class=\"text-right\"><b>Health:</b> {{enemyHealth}}</p>\n                                <p class=\"text-right\"><b>Energy:</b> {{enemyEnergy}}</p>\n                            </div>\n                        </div>\n                    </div>\n\n\n                    <div class=\"slidecontainer\">\n                        <input type=\"range\" min=\"0\" max=\"{{yourEnergy}}\" value=\"0\" class=\"slider\"\n                            [(ngModel)]=\"attackPower\">\n                        <button *ngIf=\"attackPower == 0\" (click)=\"action()\">Defend!</button>\n                        <button *ngIf=\"attackPower > 0\" (click)=\"action()\">Attack! for {{attackPower}}</button>\n                        <div *ngIf=\"battleMessage\">\n                            <p class=\"battleMessage\">{{battleMessage}}</p>\n                        </div>\n                    </div>\n\n\n                </div>\n            </div>\n            <div *ngIf=\"!dailyAdventure\">\n                <h5 class=\"text-center\">You have already gone on an adventure today!</h5>\n                <p class=\"text-center\">You can go on another adventure in tomorrow!</p>\n            </div>\n        </div>\n    </div>\n</body>\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<head>\n    <link href=\"././assets/css-circular-prog-bar.css\" rel=\"stylesheet\">\n</head>\n\n<body>\n    <div class=\"bulk\">\n\n        <nav class=\"navbar fixed-top navbar-dark bg-dark\">\n            <span class=\"navbar-brand mb-0 h1 center\">Tracking</span>\n            <button (click)=\"collapsed = !collapsed\" class=\"navbar-toggler toggle-button\" type=\"button\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n        </nav>\n        <!-- <p *ngIf=\"!tracking\">tracker is off!</p>\n        <p *ngIf=\"tracking\">tracker is on!</p> -->\n        <div class=\"content\">\n            <button class=\"btn btn-outline-primary\" (click)=\"toggleTracking()\" *ngIf=\"!tracking\">Start Tracking</button>\n            <button class=\"btn btn-outline-primary\" (click)=\"toggleTracking()\" *ngIf=\"tracking\">Stop Tracking</button>\n            <p><b>Distance travelled: </b> {{currentDistance | number:'.3-3'}} km</p>\n            <p><b>Time Elapsed:</b> {{time | date:'HH:mm:ss'}}</p>\n            <div *ngIf=\"savedLatitude\">\n                <p><b>Current Latitude:</b> {{savedLatitude}}</p>\n                <p><b>Current Longitude:</b> {{savedLongitude}}</p>\n            </div>\n            <div *ngIf=\"!savedLatitude\">\n                <p><b>Current Latitude:</b> Obtaining...</p>\n                <p><b>Current Longitude:</b> Obtaining...</p>\n            </div>\n\n            <div *ngIf=\"!tracking\">\n                <button class=\"btn btn-outline-primary\" routerLink=\"/adventure\" (click)=\"saveData()\">End Your\n                    Adventure</button>\n            </div>\n            <div *ngIf=\"tracking &&( goal > 0)\" class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-12\">\n                        <h5 class=\"text-center\"><b>Progress to Goal</b></h5>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-3\"></div>\n                    <div class=\"col-6\">\n                        <div *ngIf=\"goalPercentage <= 50\" class=\"progress-circle p{{goalPercentage| number:'.0-0'}}\">\n                            <span>{{goalPercentage| number:'.0-0'}}%</span>\n                            <div class=\"left-half-clipper\">\n                                <div class=\"first50-bar\"></div>\n                                <div class=\"value-bar\"></div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"goalPercentage > 50\"\n                            class=\"progress-circle over50 p{{goalPercentage| number:'.0-0'}}\">\n                            <span>{{goalPercentage| number:'.0-0'}}%</span>\n                            <div class=\"left-half-clipper\">\n                                <div class=\"first50-bar\"></div>\n                                <div class=\"value-bar\"></div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</body>");
+/* harmony default export */ __webpack_exports__["default"] = ("<head>\n    <link href=\"././assets/css-circular-prog-bar.css\" rel=\"stylesheet\">\n</head>\n\n<body>\n    <div class=\"bulk\">\n\n        <nav class=\"navbar fixed-top navbar-dark bg-dark\">\n            <span class=\"navbar-brand mb-0 h1 center\">Tracking</span>\n            <button (click)=\"collapsed = !collapsed\" class=\"navbar-toggler toggle-button\" type=\"button\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n        </nav>\n        <!-- <p *ngIf=\"!tracking\">tracker is off!</p>\n        <p *ngIf=\"tracking\">tracker is on!</p> -->\n        <div class=\"content\">\n            <button class=\"btn btn-outline-primary\" (click)=\"toggleTracking()\" *ngIf=\"!tracking\">Start Tracking</button>\n            <button class=\"btn btn-outline-primary\" (click)=\"toggleTracking()\" *ngIf=\"tracking\">Stop Tracking</button>\n            <p><b>Distance travelled: </b> {{currentDistance | number:'.3-3'}} km</p>\n            <p><b>Time Elapsed:</b> {{time | date:'HH:mm:ss'}}</p>\n            <div *ngIf=\"savedLatitude\">\n                <p><b>Current Latitude:</b> {{savedLatitude}}</p>\n                <p><b>Current Longitude:</b> {{savedLongitude}}</p>\n            </div>\n            <div *ngIf=\"!savedLatitude\">\n                <p><b>Current Latitude:</b> Obtaining...</p>\n                <p><b>Current Longitude:</b> Obtaining...</p>\n            </div>\n\n            <div *ngIf=\"!tracking\">\n                <button class=\"btn btn-outline-primary\" routerLink=\"/adventure\" (click)=\"saveData()\">End Your\n                    Adventure</button>\n            </div>\n            <div *ngIf=\"tracking &&( goal > 0)\" class=\"container percentage\">\n                <div class=\"row\">\n                    <div class=\"col-12\">\n                        <h5 class=\"text-center\"><b>Progress to Goal</b></h5>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-3\"></div>\n                    <div class=\"col-6\">\n                        <div *ngIf=\"goalPercentage <= 50\" class=\"progress-circle p{{goalPercentage| number:'.0-0'}}\">\n                            <span>{{goalPercentage| number:'.0-0'}}%</span>\n                            <div class=\"left-half-clipper\">\n                                <div class=\"first50-bar\"></div>\n                                <div class=\"value-bar\"></div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"goalPercentage > 50\"\n                            class=\"progress-circle over50 p{{goalPercentage| number:'.0-0'}}\">\n                            <span>{{goalPercentage| number:'.0-0'}}%</span>\n                            <div class=\"left-half-clipper\">\n                                <div class=\"first50-bar\"></div>\n                                <div class=\"value-bar\"></div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</body>");
 
 /***/ }),
 
@@ -784,7 +784,7 @@ var AppBootstrapModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".enemyIcon {\r\n  width: 100%;\r\n}\r\n\r\n.yourIcon {\r\n  width: 100%;\r\n  transform: scaleX(-1);\r\n}\r\n\r\n.battleMessage{\r\n  text-align: center;\r\n  font-weight: 350;\r\n  border: 2px solid;\r\n  border-color: black;\r\n}\r\n\r\n.border{\r\n  border: 3px solid;\r\n  border-color: black;\r\n}\r\n\r\n.slider {\r\n  -webkit-appearance: none;  /* Override default CSS styles */\r\n  -moz-appearance: none;\r\n       appearance: none;\r\n  width: 100%; /* Full-width */\r\n  height: 25px; /* Specified height */\r\n  background: black; /* Black background */\r\n  outline: none; /* Remove outline */\r\n  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */ /* 0.2 seconds transition on hover */\r\n  transition: opacity .2s;\r\n}\r\n\r\n/* Mouse-over effects */\r\n\r\n.slider:hover {\r\n  opacity: 1; /* Fully shown on mouse-over */\r\n}\r\n\r\n/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */\r\n\r\n.slider::-webkit-slider-thumb {\r\n  -webkit-appearance: none; /* Override default look */\r\n  appearance: none;\r\n  width: 25px; /* Set a specific slider handle width */\r\n  height: 25px; /* Slider handle height */\r\n  background: #c99340; /* Weird color background */\r\n  cursor: pointer; /* Cursor on hover */\r\n}\r\n\r\n.slider::-moz-range-thumb {\r\n  width: 25px; /* Set a specific slider handle width */\r\n  height: 25px; /* Slider handle height */\r\n  background: #c99340; /* Weird color background */\r\n  cursor: pointer; /* Cursor on hover */\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tYmF0L2NvbWJhdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsV0FBVztFQUVYLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx3QkFBd0IsR0FBRyxnQ0FBZ0M7RUFDM0QscUJBQWdCO09BQWhCLGdCQUFnQjtFQUNoQixXQUFXLEVBQUUsZUFBZTtFQUM1QixZQUFZLEVBQUUscUJBQXFCO0VBQ25DLGlCQUFpQixFQUFFLHFCQUFxQjtFQUN4QyxhQUFhLEVBQUUsbUJBQW1CO0VBQ2xDLFlBQVksRUFBRSx1REFBdUQsRUFDNUMsb0NBQW9DO0VBQzdELHVCQUF1QjtBQUN6Qjs7QUFFQSx1QkFBdUI7O0FBQ3ZCO0VBQ0UsVUFBVSxFQUFFLDhCQUE4QjtBQUM1Qzs7QUFFQSxnSEFBZ0g7O0FBQ2hIO0VBQ0Usd0JBQXdCLEVBQUUsMEJBQTBCO0VBQ3BELGdCQUFnQjtFQUNoQixXQUFXLEVBQUUsdUNBQXVDO0VBQ3BELFlBQVksRUFBRSx5QkFBeUI7RUFDdkMsbUJBQW1CLEVBQUUsMkJBQTJCO0VBQ2hELGVBQWUsRUFBRSxvQkFBb0I7QUFDdkM7O0FBRUE7RUFDRSxXQUFXLEVBQUUsdUNBQXVDO0VBQ3BELFlBQVksRUFBRSx5QkFBeUI7RUFDdkMsbUJBQW1CLEVBQUUsMkJBQTJCO0VBQ2hELGVBQWUsRUFBRSxvQkFBb0I7QUFDdkMiLCJmaWxlIjoic3JjL2FwcC9jb21iYXQvY29tYmF0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZW5lbXlJY29uIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnlvdXJJY29uIHtcclxuICB3aWR0aDogMTAwJTtcclxuICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGVYKC0xKTtcclxuICB0cmFuc2Zvcm06IHNjYWxlWCgtMSk7XHJcbn1cclxuXHJcbi5iYXR0bGVNZXNzYWdle1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBmb250LXdlaWdodDogMzUwO1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkO1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbn1cclxuXHJcbi5ib3JkZXJ7XHJcbiAgYm9yZGVyOiAzcHggc29saWQ7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLnNsaWRlciB7XHJcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lOyAgLyogT3ZlcnJpZGUgZGVmYXVsdCBDU1Mgc3R5bGVzICovXHJcbiAgYXBwZWFyYW5jZTogbm9uZTtcclxuICB3aWR0aDogMTAwJTsgLyogRnVsbC13aWR0aCAqL1xyXG4gIGhlaWdodDogMjVweDsgLyogU3BlY2lmaWVkIGhlaWdodCAqL1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrOyAvKiBCbGFjayBiYWNrZ3JvdW5kICovXHJcbiAgb3V0bGluZTogbm9uZTsgLyogUmVtb3ZlIG91dGxpbmUgKi9cclxuICBvcGFjaXR5OiAwLjc7IC8qIFNldCB0cmFuc3BhcmVuY3kgKGZvciBtb3VzZS1vdmVyIGVmZmVjdHMgb24gaG92ZXIpICovXHJcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiAuMnM7IC8qIDAuMiBzZWNvbmRzIHRyYW5zaXRpb24gb24gaG92ZXIgKi9cclxuICB0cmFuc2l0aW9uOiBvcGFjaXR5IC4ycztcclxufVxyXG5cclxuLyogTW91c2Utb3ZlciBlZmZlY3RzICovXHJcbi5zbGlkZXI6aG92ZXIge1xyXG4gIG9wYWNpdHk6IDE7IC8qIEZ1bGx5IHNob3duIG9uIG1vdXNlLW92ZXIgKi9cclxufVxyXG5cclxuLyogVGhlIHNsaWRlciBoYW5kbGUgKHVzZSAtd2Via2l0LSAoQ2hyb21lLCBPcGVyYSwgU2FmYXJpLCBFZGdlKSBhbmQgLW1vei0gKEZpcmVmb3gpIHRvIG92ZXJyaWRlIGRlZmF1bHQgbG9vaykgKi9cclxuLnNsaWRlcjo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTsgLyogT3ZlcnJpZGUgZGVmYXVsdCBsb29rICovXHJcbiAgYXBwZWFyYW5jZTogbm9uZTtcclxuICB3aWR0aDogMjVweDsgLyogU2V0IGEgc3BlY2lmaWMgc2xpZGVyIGhhbmRsZSB3aWR0aCAqL1xyXG4gIGhlaWdodDogMjVweDsgLyogU2xpZGVyIGhhbmRsZSBoZWlnaHQgKi9cclxuICBiYWNrZ3JvdW5kOiAjYzk5MzQwOyAvKiBXZWlyZCBjb2xvciBiYWNrZ3JvdW5kICovXHJcbiAgY3Vyc29yOiBwb2ludGVyOyAvKiBDdXJzb3Igb24gaG92ZXIgKi9cclxufVxyXG5cclxuLnNsaWRlcjo6LW1vei1yYW5nZS10aHVtYiB7XHJcbiAgd2lkdGg6IDI1cHg7IC8qIFNldCBhIHNwZWNpZmljIHNsaWRlciBoYW5kbGUgd2lkdGggKi9cclxuICBoZWlnaHQ6IDI1cHg7IC8qIFNsaWRlciBoYW5kbGUgaGVpZ2h0ICovXHJcbiAgYmFja2dyb3VuZDogI2M5OTM0MDsgLyogV2VpcmQgY29sb3IgYmFja2dyb3VuZCAqL1xyXG4gIGN1cnNvcjogcG9pbnRlcjsgLyogQ3Vyc29yIG9uIGhvdmVyICovXHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".enemyIcon {\r\n  width: 100%;\r\n}\r\n\r\n.yourIcon {\r\n  width: 100%;\r\n  transform: scaleX(-1);\r\n}\r\n\r\n.battleMessage{\r\n  text-align: center;\r\n  font-weight: 350;\r\n  border: 2px solid;\r\n  border-color: black;\r\n}\r\n\r\n.border{\r\n  border: 3px solid;\r\n  border-color: black;\r\n}\r\n\r\n.slider {\r\n  -webkit-appearance: none;\r\n  width: 100%;\r\n  height: 15px;\r\n  border-radius: 5px;\r\n  background: black;\r\n  outline: none;\r\n  opacity: 0.7;\r\n  transition: opacity .2s;\r\n}\r\n\r\n.slider:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.slider::-webkit-slider-thumb {\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  width: 25px;\r\n  height: 25px;\r\n  border-radius: 50%;\r\n  background: rgb(218, 28, 28);\r\n  cursor: pointer;\r\n}\r\n\r\n.slider::-moz-range-thumb {\r\n  width: 25px;\r\n  height: 25px;\r\n  border-radius: 50%;\r\n  background: rgb(218, 28, 28);\r\n  cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tYmF0L2NvbWJhdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsV0FBVztFQUVYLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGFBQWE7RUFDYixZQUFZO0VBRVosdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsVUFBVTtBQUNaOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQiw0QkFBNEI7RUFDNUIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLDRCQUE0QjtFQUM1QixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tYmF0L2NvbWJhdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVuZW15SWNvbiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi55b3VySWNvbiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlWCgtMSk7XHJcbiAgdHJhbnNmb3JtOiBzY2FsZVgoLTEpO1xyXG59XHJcblxyXG4uYmF0dGxlTWVzc2FnZXtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZm9udC13ZWlnaHQ6IDM1MDtcclxuICBib3JkZXI6IDJweCBzb2xpZDtcclxuICBib3JkZXItY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4uYm9yZGVye1xyXG4gIGJvcmRlcjogM3B4IHNvbGlkO1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbn1cclxuXHJcbi5zbGlkZXIge1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDE1cHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgb3BhY2l0eTogMC43O1xyXG4gIC13ZWJraXQtdHJhbnNpdGlvbjogLjJzO1xyXG4gIHRyYW5zaXRpb246IG9wYWNpdHkgLjJzO1xyXG59XHJcblxyXG4uc2xpZGVyOmhvdmVyIHtcclxuICBvcGFjaXR5OiAxO1xyXG59XHJcblxyXG4uc2xpZGVyOjotd2Via2l0LXNsaWRlci10aHVtYiB7XHJcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gIGFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgd2lkdGg6IDI1cHg7XHJcbiAgaGVpZ2h0OiAyNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kOiByZ2IoMjE4LCAyOCwgMjgpO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLnNsaWRlcjo6LW1vei1yYW5nZS10aHVtYiB7XHJcbiAgd2lkdGg6IDI1cHg7XHJcbiAgaGVpZ2h0OiAyNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kOiByZ2IoMjE4LCAyOCwgMjgpO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -1023,16 +1023,16 @@ var FormsComponent = /** @class */ (function () {
                 var counter = this.hours * 3600000 + this.minutes * 60000 + this.seconds * 1000;
                 var oldRunDistance = this.storage.getItem("runDistance");
                 var oldRunTime = this.storage.getItem("runTime");
-                if (Number(oldRunDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("runSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("runSuccess", success);
-                }
-                else if (Number(oldRunDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldRunDistance) * 1.15 <= this.distance) {
                     var success = this.storage.getItem("runSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("runSuccess", success);
+                }
+                else if (Number(oldRunDistance) * 0.9 < this.distance) {
+                    var success = this.storage.getItem("runSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("runSuccess", success);
                 }
                 var newRunNumber = Number(this.storage.getItem("runNumber"));
@@ -1053,16 +1053,16 @@ var FormsComponent = /** @class */ (function () {
                 var counter = this.hours * 3600000 + this.minutes * 60000 + this.seconds * 1000;
                 var oldSwimDistance = this.storage.getItem("swimDistance");
                 var oldSwimTime = this.storage.getItem("swimTime");
-                if (Number(oldSwimDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("swimSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("swimSuccess", success);
-                }
-                else if (Number(oldSwimDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldSwimDistance) * 1.15 <= this.distance) {
                     var success = this.storage.getItem("swimSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("swimSuccess", success);
+                }
+                else if (Number(oldSwimDistance) * 0.9 < this.distance) {
+                    var success = this.storage.getItem("swimSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("swimSuccess", success);
                 }
                 var newSwimNumber = Number(this.storage.getItem("swimNumber"));
@@ -1083,16 +1083,16 @@ var FormsComponent = /** @class */ (function () {
                 var counter = this.hours * 3600000 + this.minutes * 60000 + this.seconds * 1000;
                 var oldBikeDistance = this.storage.getItem("bikeDistance");
                 var oldBikeTime = this.storage.getItem("bikeTime");
-                if (Number(oldBikeDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("bikeSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("bikeSuccess", success);
-                }
-                else if (Number(oldBikeDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldBikeDistance) * 1.15 <= this.distance) {
                     var success = this.storage.getItem("bikeSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("bikeSuccess", success);
+                }
+                else if (Number(oldBikeDistance) * 0.9 < this.distance) {
+                    var success = this.storage.getItem("bikeSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("bikeSuccess", success);
                 }
                 var newBikeNumber = Number(this.storage.getItem("bikeNumber"));
@@ -1113,16 +1113,16 @@ var FormsComponent = /** @class */ (function () {
                 var oldWeightWeight = this.storage.getItem("weightWeight");
                 var oldWeightReps = this.storage.getItem("weightReps");
                 var oldWeightSets = this.storage.getItem("weightSets");
-                if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * .9 <= this.weight * this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("weightSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("weightSuccess", success);
-                }
-                else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets) {
                     var success = this.storage.getItem("weightSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("weightSuccess", success);
+                }
+                else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 0.9 <= this.weight * this.reps * this.sets) {
+                    var success = this.storage.getItem("weightSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("weightSuccess", success);
                 }
                 var newWeightNumber = Number(this.storage.getItem("weightNumber"));
@@ -1144,16 +1144,16 @@ var FormsComponent = /** @class */ (function () {
             if (this.reps >= 0 && this.sets >= 0) {
                 var oldPushReps = this.storage.getItem("pushReps");
                 var oldPushSets = this.storage.getItem("pushSets");
-                if (Number(oldPushReps) * Number(oldPushSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("pushSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("pushSuccess", success);
-                }
-                else if (Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) {
                     var success = this.storage.getItem("pushSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("pushSuccess", success);
+                }
+                else if (Number(oldPushReps) * Number(oldPushSets) * 0.9 <= this.reps * this.sets) {
+                    var success = this.storage.getItem("pushSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("pushSuccess", success);
                 }
                 var newPushNumber = Number(this.storage.getItem("pushNumber"));
@@ -1173,16 +1173,16 @@ var FormsComponent = /** @class */ (function () {
             if (this.reps >= 0 && this.sets >= 0) {
                 var oldSitReps = this.storage.getItem("sitReps");
                 var oldSitSets = this.storage.getItem("sitSets");
-                if (Number(oldSitReps) * Number(oldSitSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-                 {
-                    var success = this.storage.getItem("sitSuccess");
-                    success = String(Number(success) + 1);
-                    this.storage.setItem("sitSuccess", success);
-                }
-                else if (Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets) {
                     var success = this.storage.getItem("sitSuccess");
                     success = String(Number(success) + 2);
+                    this.storage.setItem("sitSuccess", success);
+                }
+                else if (Number(oldSitReps) * Number(oldSitSets) * 0.9 <= this.reps * this.sets) {
+                    var success = this.storage.getItem("sitSuccess");
+                    success = String(Number(success) + 1);
                     this.storage.setItem("sitSuccess", success);
                 }
                 var newSitNumber = Number(this.storage.getItem("sitNumber"));
@@ -1203,14 +1203,14 @@ var FormsComponent = /** @class */ (function () {
                 var oldChinReps = this.storage.getItem("chinReps");
                 var oldChinSets = this.storage.getItem("chinSets");
                 console.log(oldChinReps + ", " + oldChinSets);
-                if (Number(oldChinReps) * Number(oldChinSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-                 {
+                //Getting withing 10% of your regular goal marks a success for the week
+                //Getting above 15% of your average marks an extra success
+                if (Number(oldChinReps) * Number(oldChinSets) * 1.15 <= this.reps * this.sets) {
                     var success = this.storage.getItem("chinSuccess");
-                    success = String(Number(success) + 1);
+                    success = String(Number(success) + 2);
                     this.storage.setItem("chinSuccess", success);
                 }
-                if (Number(oldChinReps) * Number(oldChinSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
-                 {
+                if (Number(oldChinReps) * Number(oldChinSets) * 0.9 <= this.reps * this.sets) {
                     var success = this.storage.getItem("chinSuccess");
                     success = String(Number(success) + 1);
                     this.storage.setItem("chinSuccess", success);
@@ -1355,7 +1355,7 @@ var HomeComponent = /** @class */ (function () {
             this.strengthType = "chin";
             this.strengthPercentage = 100 * (chinSuccess / 4);
         }
-        if (!(runSuccess == 0 && bikeSuccess == 0 && swimSuccess == 0 && weightSuccess == 0 && pushSuccess == 0 && sitSuccess == 0 && chinSuccess == 0)) {
+        if (!(Number(this.storage.getItem("runDistance")) == 0 && Number(this.storage.getItem("bikeDistance")) == 0 && Number(this.storage.getItem("swimDistance")) == 0 && Number(this.storage.getItem("weightReps")) == 0 && Number(this.storage.getItem("pushReps")) == 0 && Number(this.storage.getItem("sitReps")) == 0 && Number(this.storage.getItem("chinReps")) == 0)) {
             this.firstTime = false;
             this.storage.setItem("firstTime", "false");
         }
@@ -1572,7 +1572,7 @@ var StatsComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RyYWNrZXIvdHJhY2tlci5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".percentage{\r\n    margin-right: 10%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdHJhY2tlci90cmFja2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC90cmFja2VyL3RyYWNrZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wZXJjZW50YWdle1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMCU7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -1607,6 +1607,9 @@ var TrackerComponent = /** @class */ (function () {
         console.log("Saved Longitude: " + this.savedLongitude);
         this.goalPercentage = 0;
         this.goal = Number(this.storage.getItem("runDistance"));
+        if (this.goal == 0) {
+            this.goal = 0.001;
+        }
     };
     TrackerComponent.prototype.toggleTracking = function () {
         var _this = this;
@@ -1676,16 +1679,18 @@ var TrackerComponent = /** @class */ (function () {
     TrackerComponent.prototype.saveData = function () {
         var oldRunDistance = this.storage.getItem("runDistance");
         var oldRunTime = this.storage.getItem("runTime");
-        if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * .9 <= this.currentDistance) //Getting withing 10% of your regular goal marks a success for the week
-         {
-            var success = this.storage.getItem("runSuccess");
-            success = String(Number(success) + 1);
-            this.storage.setItem("runSuccess", success);
-        }
-        else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 < this.currentDistance) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 1.15 <= this.currentDistance) //Getting withing 10% of your regular goal marks a success for the week
          {
             var success = this.storage.getItem("runSuccess");
             success = String(Number(success) + 2);
+            this.storage.setItem("runSuccess", success);
+        }
+        else if (Number(oldRunDistance) > 0 && Number(oldRunDistance) * 0.9 < this.currentDistance) //Getting above 15% of your average marks an extra success
+         {
+            var success = this.storage.getItem("runSuccess");
+            success = String(Number(success) + 1);
             this.storage.setItem("runSuccess", success);
         }
         if (this.currentDistance > 0) {

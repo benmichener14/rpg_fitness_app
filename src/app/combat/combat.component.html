@@ -6,9 +6,12 @@
             <span class="navbar-brand mb-0 h1 center">Combat</span>
             <div *ngIf="!collapsed" class="bg-dark navigation">
                 <div *ngIf="!fighting">
-                    <button routerLink="/home" type="button" class="btn btn-outline-primary" (click)="saveData()">Return Home</button>
-                    <button routerLink="/adventure" type="button" class="btn btn-outline-primary" (click)="saveData()">Training Adventure</button>
-                    <button routerLink="/stats" type="button" class="btn btn-outline-primary" (click)="saveData()">View Stats</button>
+                    <button routerLink="/home" type="button" class="btn btn-outline-primary" (click)="saveData()">Return
+                        Home</button>
+                    <button routerLink="/adventure" type="button" class="btn btn-outline-primary"
+                        (click)="saveData()">Training Adventure</button>
+                    <button routerLink="/stats" type="button" class="btn btn-outline-primary" (click)="saveData()">View
+                        Stats</button>
                     <button type="button" class="btn btn-outline-primary" (click)="help()">Help</button>
                 </div>
             </div>
@@ -18,11 +21,33 @@
         </nav>
         <div class="content">
             <div *ngIf="dailyAdventure">
-                <div *ngIf="!fighting">
-                    <p>Current Health: {{yourHealth}}</p>
-                    <p>Current Energy: {{yourEnergy}}</p>
-                    <p>Gold earned this expedition: {{earnedGold}}</p>
-                    <button *ngIf="yourHealth > 0" (click)="getEnemy()" class="btn btn-outline-primary">Get a new enemy to fight!</button>
+                <div *ngIf="!fighting" class="container">
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="text-left"><b>Current Health:</b></p>
+                        </div>
+                        <div class="col-3">
+                            <p class="text-right">{{yourHealth}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="text-left"><b>Current Energy:</b></p>
+                        </div>
+                        <div class="col-3">
+                            <p class="text-right">{{yourEnergy}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="text-left"><b>Gold earned this expedition:</b></p>
+                        </div>
+                        <div class="col-3">
+                            <p class="text-right">{{earnedGold}}</p>
+                        </div>
+                    </div>
+                    <button *ngIf="yourHealth > 0" (click)="getEnemy()" class="btn btn-outline-primary">Get a new enemy
+                        to fight!</button>
                 </div>
                 <div *ngIf="fighting">
                     <div class="container">
@@ -32,8 +57,7 @@
                                     <img src="././assets/M.png" alt="Enemy" class="yourIcon align-left">
                                 </div>
                                 <div class="col-6">
-                                    <img src="././assets/{{enemyName}}.png" alt="Enemy"
-                                        class="enemyIcon  align-right">
+                                    <img src="././assets/{{enemyName}}.png" alt="Enemy" class="enemyIcon  align-right">
                                 </div>
                             </div>
                         </div>

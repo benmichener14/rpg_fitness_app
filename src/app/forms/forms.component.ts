@@ -57,17 +57,18 @@ export class FormsComponent implements OnInit {
 
         let oldRunDistance = this.storage.getItem("runDistance");
         let oldRunTime = this.storage.getItem("runTime");
-
-        if(Number(oldRunDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("runSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("runSuccess", success);
-        }
-        else if (Number(oldRunDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldRunDistance) * 1.15 <= this.distance) 
         {
           let success = this.storage.getItem("runSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("runSuccess", success);
+        }
+        else if (Number(oldRunDistance) * 0.9 < this.distance) 
+        {
+          let success = this.storage.getItem("runSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("runSuccess", success);
         }
 
@@ -92,17 +93,18 @@ export class FormsComponent implements OnInit {
 
         let oldSwimDistance = this.storage.getItem("swimDistance");
         let oldSwimTime = this.storage.getItem("swimTime");
-
-        if(Number(oldSwimDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("swimSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("swimSuccess", success);
-        }
-        else if (Number(oldSwimDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldSwimDistance) * 1.15 <= this.distance) 
         {
           let success = this.storage.getItem("swimSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("swimSuccess", success);
+        }
+        else if (Number(oldSwimDistance) * 0.9 < this.distance) 
+        {
+          let success = this.storage.getItem("swimSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("swimSuccess", success);
         }
 
@@ -127,17 +129,18 @@ export class FormsComponent implements OnInit {
 
         let oldBikeDistance = this.storage.getItem("bikeDistance");
         let oldBikeTime = this.storage.getItem("bikeTime");
-
-        if(Number(oldBikeDistance) * .9 <= this.distance) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("bikeSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("bikeSuccess", success);
-        }
-        else if (Number(oldBikeDistance) * 1.15 < this.distance) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldBikeDistance) * 1.15 <= this.distance) 
         {
           let success = this.storage.getItem("bikeSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("bikeSuccess", success);
+        }
+        else if (Number(oldBikeDistance) * 0.9 < this.distance) 
+        {
+          let success = this.storage.getItem("bikeSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("bikeSuccess", success);
         }
 
@@ -162,17 +165,18 @@ export class FormsComponent implements OnInit {
         let oldWeightWeight = this.storage.getItem("weightWeight");
         let oldWeightReps = this.storage.getItem("weightReps");
         let oldWeightSets = this.storage.getItem("weightSets");
-
-        if(Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * .9 <= this.weight * this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("weightSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("weightSuccess", success);
-        }
-        else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 1.15 <= this.weight * this.reps * this.sets)
         {
           let success = this.storage.getItem("weightSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("weightSuccess", success);
+        }
+        else if (Number(oldWeightWeight) * Number(oldWeightReps) * Number(oldWeightSets) * 0.9 <= this.weight * this.reps * this.sets) 
+        {
+          let success = this.storage.getItem("weightSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("weightSuccess", success);
         }
 
@@ -198,17 +202,18 @@ export class FormsComponent implements OnInit {
 
         let oldPushReps = this.storage.getItem("pushReps");
         let oldPushSets = this.storage.getItem("pushSets");
-
-        if(Number(oldPushReps) * Number(oldPushSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("pushSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("pushSuccess", success);
-        }
-        else if (Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldPushReps) * Number(oldPushSets) * 1.15 <= this.reps * this.sets) 
         {
           let success = this.storage.getItem("pushSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("pushSuccess", success);
+        }
+        else if (Number(oldPushReps) * Number(oldPushSets) * 0.9 <= this.reps * this.sets)
+        {
+          let success = this.storage.getItem("pushSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("pushSuccess", success);
         }
 
@@ -232,17 +237,18 @@ export class FormsComponent implements OnInit {
 
         let oldSitReps = this.storage.getItem("sitReps");
         let oldSitSets = this.storage.getItem("sitSets");
-
-        if(Number(oldSitReps) * Number(oldSitSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
-        {
-          let success = this.storage.getItem("sitSuccess")
-          success = String(Number(success) + 1);
-          this.storage.setItem("sitSuccess", success);
-        }
-        else if (Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldSitReps) * Number(oldSitSets) * 1.15 <= this.reps * this.sets)
         {
           let success = this.storage.getItem("sitSuccess")
           success = String(Number(success) + 2);
+          this.storage.setItem("sitSuccess", success);
+        }
+        else if (Number(oldSitReps) * Number(oldSitSets) * 0.9 <= this.reps * this.sets)
+        {
+          let success = this.storage.getItem("sitSuccess")
+          success = String(Number(success) + 1);
           this.storage.setItem("sitSuccess", success);
         }
 
@@ -267,14 +273,15 @@ export class FormsComponent implements OnInit {
         let oldChinReps = this.storage.getItem("chinReps");
         let oldChinSets = this.storage.getItem("chinSets");
         console.log(oldChinReps + ", " + oldChinSets);
-
-        if(Number(oldChinReps) * Number(oldChinSets) * .9 <= this.reps * this.sets) //Getting withing 10% of your regular goal marks a success for the week
+        //Getting withing 10% of your regular goal marks a success for the week
+        //Getting above 15% of your average marks an extra success
+        if(Number(oldChinReps) * Number(oldChinSets) * 1.15 <= this.reps * this.sets)
         {
           let success = this.storage.getItem("chinSuccess")
-          success = String(Number(success) + 1);
+          success = String(Number(success) + 2);
           this.storage.setItem("chinSuccess", success);
         }
-        if (Number(oldChinReps) * Number(oldChinSets) * 1.15 <= this.reps * this.sets) //Getting above 15% of your average marks an extra success
+        if (Number(oldChinReps) * Number(oldChinSets) * 0.9 <= this.reps * this.sets)
         {
           let success = this.storage.getItem("chinSuccess")
           success = String(Number(success) + 1);
