@@ -6,18 +6,28 @@
 
 .progressLabel{ 
   text-align: center;
-  margin-top: 20%;
+  margin-top: 10%;
   }
 
-.progressButton{
-  position: absolute; 
-  bottom: 15px;
-  width: 90%;
+.progress-bar{
+  color: #ffffff;
+  background-color: #5e0003;
+  border: solid #000000;
+  
+}
+.progress{
+  height: 25px;
+  background-color:#344042;
+  margin-top: 5px;
+  margin-bottom:10px;
 }
 
-.labelContainer{
-  width: 150px;
-  height: 188px;
+.progressButton{
+  width: 100%;
+}
+
+.helpButton{
+  width: 20%;
 }
 
 .align-left{

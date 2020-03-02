@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
     if (diffDays > 10 && lastdiffDays > 3 && Number(endurance) > 10) {
 
-      if (Number(endurance) > 11) {
+      if (Number(endurance) >= 11) {
         this.storage.setItem("endurance", String(Number(endurance) - 1));
         alert("Due to inactivity in endurance related activities, your endurance has decreased.")
       }
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
     let strength = this.storage.getItem("strength");
 
     if (diffDays > 10 && lastdiffDays > 3 && Number(strength) > 10) {
-      if (Number(strength) > 11) {
+      if (Number(strength) >= 11) {
         this.storage.setItem("strength", String(Number(strength) - 1));
         alert("Due to inactivity in strength related activities, your strength has decreased.")
       }
@@ -90,6 +90,10 @@ export class HomeComponent implements OnInit {
       this.enduranceType = "swim";
       this.endurancePercentage = 100 * (swimSuccess / 4);
     }
+    else{
+      this.enduranceType = "run";
+      this.endurancePercentage = 0;
+    }
 
     let weightSuccess = Number(this.storage.getItem("weightSuccess"));
     let pushSuccess = Number(this.storage.getItem("pushSuccess"));
@@ -112,13 +116,16 @@ export class HomeComponent implements OnInit {
       this.strengthType = "chin";
       this.strengthPercentage = 100 * (chinSuccess / 4);
     }
+    else{
+      this.strengthPercentage = 0;
+      this.strengthType = "weight";
+    }
 
     if (!(Number(this.storage.getItem("runDistance")) == 0 && Number(this.storage.getItem("bikeDistance")) == 0 && Number(this.storage.getItem("swimDistance")) == 0 && Number(this.storage.getItem("weightReps")) == 0 && Number(this.storage.getItem("pushReps")) == 0 && Number(this.storage.getItem("sitReps")) == 0 && Number(this.storage.getItem("chinReps")) == 0)) 
     {
       this.firstTime = false;
       this.storage.setItem("firstTime", "false");
     }
-
   }
 
   enduranceGoal() {

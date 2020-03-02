@@ -86,7 +86,7 @@ export class TrackerComponent implements OnInit {
         this.savedLatitude = latitude;
         this.savedLongitude = longitude;
 
-        this.goalPercentage = 100 * (this.currentDistance/this.goal)
+        this.goalPercentage = Number((100 * (this.currentDistance/this.goal)).toFixed())
       }
       //setTimeout(() => {}, 5000);
     },

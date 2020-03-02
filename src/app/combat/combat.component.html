@@ -12,10 +12,12 @@
                         (click)="saveData()">Training Adventure</button>
                     <button routerLink="/stats" type="button" class="btn btn-outline-primary" (click)="saveData()">View
                         Stats</button>
-                    <button type="button" class="btn btn-outline-primary" (click)="help()">Help</button>
                 </div>
             </div>
-            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+            <button (click)="collapsed = !collapsed" *ngIf="!fighting" class="navbar-toggler toggle-button btn btn-outline-primary" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button (click)="collapsed = !collapsed" *ngIf="fighting" class="navbar-toggler toggle-button btn btn-outline-danger" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
@@ -95,5 +97,8 @@
             </div>
         </div>
     </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <button type="button" (click)="help()" class="btn btn-outline-primary helpButton">?</button>
+      </nav>
 </body>
 <router-outlet></router-outlet>

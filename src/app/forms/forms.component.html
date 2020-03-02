@@ -5,11 +5,20 @@
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1 center">Previous Workout</span>
-            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button btn btn-outline-danger" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
+
+
         <div class="content">
+
+            <div class="row">
+                <div class="col-12 background">
+                    <img src="././assets/knight-run-2.gif" alt="running" class="yourIcon center">
+                </div>
+            </div>
+
             <select [(ngModel)]="selectedExercise" (change)="selected()">
                 <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
             </select>
@@ -22,20 +31,20 @@
                         <label>Distance (km):</label>
                     </div>
                     <div class="col-6">
-                        <input class="input" type="number" [(ngModel)]="distance">
+                        <input class="input distance" type="number" [(ngModel)]="distance">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Time:</label>
                     </div>
-                    <div class="col-8">
-                        <p>
-                            <input type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
+                    <div class="col-6">
+                        <p class="timeContainer">
+                            <input class="time" type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
                             :
-                            <input type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
+                            <input class="time" type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
                             :
-                            <input type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
+                            <input class="time" type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
                         </p>
                     </div>
                 </div>
@@ -46,20 +55,20 @@
                         <label>Distance (km):</label>
                     </div>
                     <div class="col-6">
-                        <input class="input" type="number" [(ngModel)]="distance">
+                        <input class="input distance" type="number" [(ngModel)]="distance">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Time:</label>
                     </div>
-                    <div class="col-8">
-                        <p>
-                            <input type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
+                    <div class="col-6">
+                        <p class="timeContainer">
+                            <input class="time" type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
                             :
-                            <input type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
+                            <input class="time" type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
                             :
-                            <input type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
+                            <input class="time" type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
                         </p>
                     </div>
                 </div>
@@ -70,20 +79,20 @@
                         <label>Distance (km):</label>
                     </div>
                     <div class="col-6">
-                        <input class="input" type="number" [(ngModel)]="distance">
+                        <input class="input distance" type="number" [(ngModel)]="distance">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Time:</label>
                     </div>
-                    <div class="col-8">
-                        <p>
-                            <input type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
+                    <div class="col-6">
+                        <p class="timeContainer">
+                            <input class="time" type="number" min="0" max="12" placeholder="HR" [(ngModel)]="hours">
                             :
-                            <input type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
+                            <input class="time" type="number" min="0" max="59" placeholder="MIN" [(ngModel)]="minutes">
                             :
-                            <input type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
+                            <input class="time" type="number" min="0" max="59" placeholder="SEC" [(ngModel)]="seconds">
                         </p>
                     </div>
                 </div>
@@ -94,85 +103,92 @@
                         <label>Weight (lbs):</label>
                     </div>
                     <div class="col-6">
-                        <input type="number" [(ngModel)]="weight" class="input">
+                        <input type="number" [(ngModel)]="weight" class="input weight">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Reps:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="reps" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="reps" class="input reps">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Sets:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="sets" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="sets" class="input sets">
                     </div>
                 </div>
             </div>
             <div class="container" *ngIf="selectedExercise.name == 'Push Ups'">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Reps:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="reps" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="reps" class="input reps">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Sets:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="sets" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="sets" class="input sets">
                     </div>
                 </div>
             </div>
             <div class="container" *ngIf="selectedExercise.name == 'Sit Ups'">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Reps:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="reps" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="reps" class="input reps">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Sets:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="sets" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="sets" class="input sets">
                     </div>
                 </div>
             </div>
             <div class="container" *ngIf="selectedExercise.name == 'Chin Ups'">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Reps:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="reps" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="reps" class="input reps">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <label>Sets:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="number" [(ngModel)]="sets" class="input">
+                    <div class="col-6">
+                        <input type="number" [(ngModel)]="sets" class="input sets">
                     </div>
                 </div>
             </div>
 
-            <button *ngIf="selectedExercise.name != 'Default'" (click)="submit()"
-                class="btn btn-outline-primary">Submit</button>
-            <button routerLink="/adventure" class="btn btn-outline-primary">Cancel</button>
         </div>
     </div>
+    <div class="fixed-bottom bottom">
+        <button *ngIf="selectedExercise.name != 'Default'" (click)="submit()"
+                class="btn btn-outline-primary">Submit</button>
+        <button *ngIf="selectedExercise.name == 'Default'"
+                class="btn btn-outline-secondary">Submit</button>
+        <button routerLink="/adventure" class="btn btn-outline-primary">Cancel</button>
+    </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <button type="button" (click)="help()" class="btn btn-outline-primary helpButton">?</button>
+      </nav>
 </body>
 <router-outlet></router-outlet>

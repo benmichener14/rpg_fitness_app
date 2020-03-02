@@ -10,10 +10,8 @@
       <button routerLink="/adventure" type="button" class="btn btn-outline-primary">Training Adventure</button>
       <button routerLink="/combat" type="button" class="btn btn-outline-primary">Combat Adventure</button>
       <button routerLink="/stats" type="button" class="btn btn-outline-primary">View Stats</button>
-      <br>
-      <button type="button" (click)="help()" class="btn btn-outline-primary">Help</button>
     </div>
-    <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+    <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button btn btn-outline-primary" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
@@ -26,26 +24,17 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-5 align-left labelContainer">
-            <p class="progressLabel">Progress until next Endurance Increase</p>
-
+          <div class="col-12">
+            <p class="progressLabel"><b>Progress until next Endurance Increase</b></p>
           </div>
-          <div class="col-7 align-right vertical-center">
-            <div *ngIf="endurancePercentage <= 50" class="progress-circle p{{endurancePercentage}}">
-              <span>{{endurancePercentage}}%</span>
-              <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="progress">
+              <span class="percentageLabel">{{endurancePercentage}}%</span>
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': endurancePercentage+'%'}"
+                aria-valuenow="endurancePercentage" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div *ngIf="endurancePercentage > 50" class="progress-circle over50 p{{endurancePercentage}}">
-              <span>{{endurancePercentage}}%</span>
-              <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
-              </div>
-            </div>
-            <br> <br>
           </div>
         </div>
         <div class="row">
@@ -58,26 +47,17 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-5 align-left labelContainer">
-            <p class="progressLabel">Progress until next Strength Increase</p>
-
+          <div class="col-12">
+            <p class="progressLabel"><b>Progress until next Strength Increase</b></p>
           </div>
-          <div class="col-7 align-right vertical-center">
-            <div *ngIf="strengthPercentage <= 50" class="progress-circle p{{strengthPercentage}}">
-              <span>{{strengthPercentage}}%</span>
-              <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="progress">
+              <span class="percentageLabel">{{strengthPercentage}}%</span>
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': strengthPercentage+'%'}"
+                aria-valuenow="strengthPercentage" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div *ngIf="strengthPercentage > 50" class="progress-circle over50 p{{strengthPercentage}}">
-              <span>{{strengthPercentage}}%</span>
-              <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
-              </div>
-            </div>
-            <br> <br>
           </div>
         </div>
         <div class="row">
@@ -90,13 +70,19 @@
     </div>
     <div *ngIf="firstTime" class="bulk">
       <br>
-        <div class="icon">
-            <img src="././assets/chest.png" alt="RPG: Regular Phitness Game" class="icon">
-          </div>
+      <div class="icon">
+        <img src="././assets/chest.png" alt="RPG: Regular Phitness Game" class="icon">
+      </div>
       <h5 class="text-center">Hello, and welcome to RPG!</h5>
-      <p class="text-center">This is an exercise app, developed over the course of a semester by developer Ben Michener. If this is your first time using the app, please make sure to click on the "Help" buttons on each new screen!</p>
-      <p class="text-center">The help button can be found in the nav menu on each screen. When in doubt, do your best to find out!</p>
+      <p class="text-center">This is an exercise app, developed over the course of a semester by developer Ben Michener.
+        If this is your first time using the app, please make sure to click on the "Help" buttons on each new screen!
+      </p>
+      <p class="text-center">The help button can be found in the nav menu on each screen. When in doubt, do your best to
+        find out!</p>
     </div>
   </div>
+  <nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <button type="button" (click)="help()" class="btn btn-outline-primary helpButton">?</button>
+  </nav>
 </body>
 <router-outlet></router-outlet>

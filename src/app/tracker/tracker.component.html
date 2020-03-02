@@ -7,58 +7,95 @@
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1 center">Tracking</span>
-            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button btn btn-outline-danger" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
         <!-- <p *ngIf="!tracking">tracker is off!</p>
         <p *ngIf="tracking">tracker is on!</p> -->
         <div class="content">
+            <div class="row">
+                <div *ngIf="tracking" class="col-12 background">
+                    <img src="././assets/knight-run-2.gif" alt="running" class="yourIcon center">
+                </div>
+                <div *ngIf="!tracking" class="col-12 background">
+                    <img src="././assets/knight-idle-2.gif" alt="running" class="yourIcon center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="text-center"><b>Progress to Goal</b></h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="progress">
+                        <span class="percentageLabel">{{goalPercentage}}%</span>
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{'width': goalPercentage +'%'}"
+                            aria-valuenow="goalPercentage" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
             <button class="btn btn-outline-primary" (click)="toggleTracking()" *ngIf="!tracking">Start Tracking</button>
             <button class="btn btn-outline-primary" (click)="toggleTracking()" *ngIf="tracking">Stop Tracking</button>
-            <p><b>Distance travelled: </b> {{currentDistance | number:'.3-3'}} km</p>
-            <p><b>Time Elapsed:</b> {{time | date:'HH:mm:ss'}}</p>
-            <div *ngIf="savedLatitude">
-                <p><b>Current Latitude:</b> {{savedLatitude}}</p>
-                <p><b>Current Longitude:</b> {{savedLongitude}}</p>
+            <div class="row">
+                <div class="col-7 text-left">
+                    <p><b>Distance travelled: </b></p>
+                </div>
+                <div class="col-5 text-right">
+                    <p>{{currentDistance | number:'.3-3'}} km</p>
+                </div>
             </div>
-            <div *ngIf="!savedLatitude">
-                <p><b>Current Latitude:</b> Obtaining...</p>
-                <p><b>Current Longitude:</b> Obtaining...</p>
+            <div class="row">
+                <div class="col-7 text-left">
+                    <p><b>Time Elapsed: </b></p>
+                </div>
+                <div class="col-5 text-right">
+                    <p>{{time | date:'HH:mm:ss'}}</p>
+                </div>
             </div>
 
-            <div *ngIf="!tracking">
-                <button class="btn btn-outline-primary" routerLink="/adventure" (click)="saveData()">End Your
-                    Adventure</button>
-            </div>
-            <div *ngIf="tracking &&( goal > 0)" class="container percentage">
-                <div class="row">
-                    <div class="col-12">
-                        <h5 class="text-center"><b>Progress to Goal</b></h5>
-                    </div>
+            <div class="row" *ngIf="savedLatitude">
+                <div class="col-7 text-left">
+                    <p><b>Current Latitude: </b></p>
                 </div>
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">
-                        <div *ngIf="goalPercentage <= 50" class="progress-circle p{{goalPercentage| number:'.0-0'}}">
-                            <span>{{goalPercentage| number:'.0-0'}}%</span>
-                            <div class="left-half-clipper">
-                                <div class="first50-bar"></div>
-                                <div class="value-bar"></div>
-                            </div>
-                        </div>
-                        <div *ngIf="goalPercentage > 50"
-                            class="progress-circle over50 p{{goalPercentage| number:'.0-0'}}">
-                            <span>{{goalPercentage| number:'.0-0'}}%</span>
-                            <div class="left-half-clipper">
-                                <div class="first50-bar"></div>
-                                <div class="value-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3"></div>
+                <div class="col-5 text-right">
+                    <p>{{savedLatitude}}</p>
+                </div>
+                <div class="col-7 text-left">
+                    <p><b>Current Longitude: </b></p>
+                </div>
+                <div class="col-5 text-right">
+                    <p>{{savedLongitude}}</p>
                 </div>
             </div>
+
+            <div class="row" *ngIf="!savedLatitude">
+                <div class="col-7 text-left">
+                    <p><b>Current Latitude: </b></p>
+                </div>
+                <div class="col-5 text-right">
+                    <p>Obtaining...</p>
+                </div>
+                <div class="col-7 text-left">
+                    <p><b>Current Longitude: </b></p>
+                </div>
+                <div class="col-5 text-right">
+                    <p>Obtaining...</p>
+                </div>
+            </div>
+            
+        </div>
+        <div *ngIf="!tracking" class="fixed-bottom bottom">
+            <button class="btn btn-outline-primary" routerLink="/adventure" (click)="saveData()">End Your
+                Adventure</button>
+        </div>
+        <div *ngIf="tracking" class="fixed-bottom bottom">
+            <button class="btn btn-outline-secondary">End Your
+                Adventure</button>
         </div>
     </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <button type="button" (click)="help()" class="btn btn-outline-primary helpButton">?</button>
+    </nav>
 </body>

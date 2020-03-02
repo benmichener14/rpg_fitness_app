@@ -28,12 +28,13 @@ html, body { height: 80%; }
 }
 .input{
     float: right;
+    color: #ffffff
 }
 
 body { 
     margin: 0; 
     font-family:"Luminari", fantasy; 
-    background-color: #ebd5b3;
+    background-color: #e5e7e6;
 }
 .center{
     display: block;
@@ -53,19 +54,21 @@ button{
     text-align: center;
     padding: 3px;
     margin-bottom: 5px;
-    background-color: #c99340;
+    background-color: #344042;
     border: 2px solid black;
 }
 
 select{
     width: 100%;
-    background-color: #c99340;
+    background-color: #344042;
     border: 2px solid black;
+    color: #ffffff
 }
 
 input{
-    background-color: #c99340;
+    background-color: #344042;
     border: 2px solid black;
+    color: #ffffff
 }
 
 .align-left{
@@ -87,3 +90,47 @@ input{
 .text-left{
     text-align: left;
 }
+
+.progressLabel{ 
+    text-align: center;
+    margin-top: 10%;
+    }
+  
+  .progress-bar{
+    color: #ffffff;
+    background-color: #5e0003;
+    border: solid #000000;
+    
+  }
+  .progress{
+    height: 25px;
+    background-color:#344042;
+    margin-top: 5px;
+    margin-bottom:10px;
+  }
+  
+  .percentageLabel{
+    color:#ffffff; 
+    text-align: center; 
+    width: 90%;
+    height: 25px;
+    margin-top:3px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .helpButton{
+    width: 20%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .btn:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffffff;
+  }

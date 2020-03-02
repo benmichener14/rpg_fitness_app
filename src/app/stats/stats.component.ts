@@ -13,7 +13,7 @@ export class StatsComponent implements OnInit {
     "Running",
     "Swimming",
     "Biking",
-    "Weight Lifting",
+    "Weights",
     "Push Ups",
     "Sit Ups",
     "Chin Ups"];

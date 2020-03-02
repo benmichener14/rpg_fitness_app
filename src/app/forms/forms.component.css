@@ -1,3 +1,29 @@
 .input{
     width: 100%;
 }
+
+.bottom{
+    margin-bottom: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.background{
+    background-color: #4A4849;
+    border: 2px solid black;
+    margin-bottom: 5px;
+}
+
+.yourIcon{
+    width: 60px;
+    height: 50px;
+}
+
+.time{
+    width: 28%;
+}
+
+.timeContainer, .distance, .sets, .reps, .weight{
+    width: 130%;
+    float: right;
+}

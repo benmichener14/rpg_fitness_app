@@ -9,33 +9,19 @@
                     <button routerLink="/home" type="button" class="btn btn-outline-primary">Return Home</button>
                     <button routerLink="/combat" type="button" class="btn btn-outline-primary">Combat Adventure</button>
                     <button routerLink="/stats" type="button" class="btn btn-outline-primary">View Stats</button>
-                    <br>
-                    <button type="button" (click)="help()" class="btn btn-outline-primary">Help</button>
                 </div>
             </div>
-            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button" type="button">
+            <button (click)="collapsed = !collapsed" class="navbar-toggler toggle-button btn btn-outline-primary" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
         <div class="content">
-            <div *ngIf="firstRun">
-                <p class="text-center">Looks like you have not gone on a run yet. Your averages will be calculated once you start training.</p>
-                <br>
-                <p><b>Endurance:</b> {{playerEndurance}}</p>
-                <p><b>Strength:</b> {{playerStrength}}</p>
-                <p><b>Gold:</b> {{playerGold}}</p>
-            </div>
-            <div *ngIf="!firstRun">
-                <p><b>Average Distance:</b> {{averageDistance | number:'.3-3'}} Km</p>
-                <p><b>Average Time:</b> {{averageTime | date:'HH:mm:ss'}}</p>
-                <br>
-                <p><b>Endurance:</b> {{playerEndurance}}</p>
-                <p><b>Strength:</b> {{playerStrength}}</p>
-                <p><b>Gold:</b> {{playerGold}}</p>
-            </div>
-            <button class="btn btn-outline-primary" routerLink="/tracker">New Tracked Expedition</button> <br>
-            <button class="btn btn-outline-primary" routerLink="/forms">Report Untracked Expedition</button> <br>
+            <button class="exercisebtn btn btn-primary navbutton" routerLink="/tracker">New Tracked Expedition</button> <br>
+            <button class="exercisebtn btn btn-success navbutton" routerLink="/forms">Report Untracked Expedition</button> <br>
         </div>
     </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <button type="button" (click)="help()" class="btn btn-outline-primary helpButton">?</button>
+      </nav>
 </body>
 <router-outlet></router-outlet>
