@@ -39,8 +39,7 @@ export class TrackerComponent implements OnInit {
 
     this.goalPercentage = 0;
     this.goal = Number(this.storage.getItem("runDistance"));
-    if(this.goal == 0)
-    {
+    if (this.goal == 0) {
       this.goal = 0.001;
     }
   }
@@ -86,7 +85,7 @@ export class TrackerComponent implements OnInit {
         this.savedLatitude = latitude;
         this.savedLongitude = longitude;
 
-        this.goalPercentage = Number((100 * (this.currentDistance/this.goal)).toFixed())
+        this.goalPercentage = Number((100 * (this.currentDistance / this.goal)).toFixed())
       }
       //setTimeout(() => {}, 5000);
     },
@@ -134,8 +133,7 @@ export class TrackerComponent implements OnInit {
       this.storage.setItem("runSuccess", success);
     }
 
-    if(this.currentDistance > 0)
-    {
+    if (this.currentDistance > 0) {
       let newRunNumber = Number(this.storage.getItem("runNumber"));
       let newRunDistance = ((Number(this.storage.getItem("runDistance")) * Number(newRunNumber)) + this.currentDistance) / (newRunNumber + 1);
       let newRunTime = ((Number(this.storage.getItem("runTime")) * Number(newRunNumber)) + this.counter) / (newRunNumber + 1);
@@ -152,4 +150,9 @@ export class TrackerComponent implements OnInit {
     }
   }
 
+  help() {
+    if (confirm("In a tracked workout, the app will use the phone's GPS to get an approximation of the distance traveled during your run.")) {
+      if (confirm("Your goal for each workout is to get withing 10% of your average. Doing so will count as one \"success\" towards a stat increase. If you manage to go at least 15% above your average, you will be rewarded with a second \"success\".")) { }
+    }
+  }
 }

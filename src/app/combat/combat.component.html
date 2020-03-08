@@ -10,6 +10,7 @@
                         Home</button>
                     <button routerLink="/adventure" type="button" class="btn btn-outline-primary"
                         (click)="saveData()">Training Adventure</button>
+                    <button type="button" class="btn btn-outline-secondary">Combat Adventure</button>
                     <button routerLink="/stats" type="button" class="btn btn-outline-primary" (click)="saveData()">View
                         Stats</button>
                 </div>
@@ -24,55 +25,69 @@
         <div class="content">
             <div *ngIf="dailyAdventure">
                 <div *ngIf="!fighting" class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="text-left"><b>Current Health:</b></p>
+                    <div class="row table">
+                        <div class="col-7">
+                            <p class="text-left stat"><b>Current Health:</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="text-right">{{yourHealth}}</p>
+                            <img src="././assets/heart.png" alt="heart" class="icons align-right">
+                        </div>
+                        <div class="col-2">
+                            <h5 class="text-right stat">{{yourHealth}}</h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="text-left"><b>Current Energy:</b></p>
+                    <div class="row table">
+                        <div class="col-7">
+                            <p class="text-left stat"><b>Current Energy:</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="text-right">{{yourEnergy}}</p>
+                            <img src="././assets/energy.png" alt="Energy" class="icons align-right">
+                        </div>
+                        <div class="col-2">
+                            <h5 class="text-right stat">{{yourEnergy}}</h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="text-left"><b>Gold earned this expedition:</b></p>
+                    <div class="row table">
+                        <div class="col-7">
+                            <p class="text-left stat"><b>Gold earned this expedition:</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="text-right">{{earnedGold}}</p>
+                            <img src="././assets/gold.png" alt="Gold" class="icons align-right">
+                        </div>
+                        <div class="col-2 stat">
+                            <h5 class="text-right">{{earnedGold}}</h5>
                         </div>
                     </div>
-                    <button *ngIf="yourHealth > 0" (click)="getEnemy()" class="btn btn-outline-primary">Get a new enemy
+                    <button *ngIf="yourHealth > 0" (click)="getEnemy()" class="fightbtn btn btn-primary">Get a new enemy
                         to fight!</button>
                 </div>
                 <div *ngIf="fighting">
                     <div class="container">
                         <div class="">
                             <div class="row">
+                                <div class="col-12">
+                                    <img src="././assets/background.png" alt="background" class="background">
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-6">
-                                    <img src="././assets/M.png" alt="Enemy" class="yourIcon align-left">
+                                    <img src="././assets/M.png" alt="Enemy" class="yourIcon align-left float">
                                 </div>
                                 <div class="col-6">
-                                    <img src="././assets/{{enemyName}}.png" alt="Enemy" class="enemyIcon  align-right">
+                                    <img src="././assets/{{enemyName}}.png" alt="Enemy" class="enemyIcon  align-right float">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <h5>You</h5>
-                                <p class="text-left"><b>Health:</b> {{yourHealth}}</p>
-                                <p class="text-left"><b>Energy:</b> {{yourEnergy}}</p>
+                                <h5 class="text-left">You</h5>
+                                <p class="text-left"><img src="././assets/heart.png" alt="heart" class="iconsmall"> <b>{{yourHealth}}</b></p>
+                                <p class="text-left"><img src="././assets/energy.png" alt="Energy" class="iconsmall"> <b>{{yourEnergy}}</b></p>
                             </div>
                             <div class="col-6">
-                                <h5 class="text-center">{{enemyName}}</h5>
-                                <p class="text-right"><b>Health:</b> {{enemyHealth}}</p>
-                                <p class="text-right"><b>Energy:</b> {{enemyEnergy}}</p>
+                                <h5 class="text-right">{{enemyName}}</h5>
+                                <p class="text-right"><b>{{enemyHealth}}</b><img src="././assets/heart.png" alt="heart" class="iconsmall"></p>
+                                <p class="text-right"><b>{{enemyEnergy}}</b><img src="././assets/energy.png" alt="Energy" class="iconsmall"></p>
                             </div>
                         </div>
                     </div>
@@ -81,8 +96,8 @@
                     <div class="slidecontainer">
                         <input type="range" min="0" max="{{yourEnergy}}" value="0" class="slider"
                             [(ngModel)]="attackPower">
-                        <button *ngIf="attackPower == 0" (click)="action()">Defend!</button>
-                        <button *ngIf="attackPower > 0" (click)="action()">Attack! for {{attackPower}}</button>
+                        <button *ngIf="attackPower == 0" (click)="action()" type="button" class="btn btn-outline-primary">Defend!</button>
+                        <button *ngIf="attackPower > 0" (click)="action()" type="button" class="btn btn-outline-primary">Attack! for {{attackPower}}</button>
                         <div *ngIf="battleMessage">
                             <p class="battleMessage">{{battleMessage}}</p>
                         </div>
@@ -93,7 +108,8 @@
             </div>
             <div *ngIf="!dailyAdventure">
                 <h5 class="text-center">You have already gone on an adventure today!</h5>
-                <p class="text-center">You can go on another adventure in tomorrow!</p>
+                <p class="text-center">You can go on another adventure tomorrow!</p>
+                <p><img src="././assets/knight-idle-2.gif" alt="idle" class="center"></p>
             </div>
         </div>
     </div>
