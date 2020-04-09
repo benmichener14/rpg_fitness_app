@@ -1,9 +1,18 @@
+.body{
+  margin:4px;
+}
+
 .enemyIcon {
   width: 80%;
   bottom: -20%;
   left: 45px;
 
   position: absolute;
+}
+
+.eHit{
+  left: 0px;
+  right: 40px;
 }
 
 .yourIcon {
@@ -14,6 +23,11 @@
   transform: scaleX(-1);
 
   position: absolute;
+}
+
+.pHit{
+  right: 0px;
+  left: 40px;
 }
 
 .background{
@@ -56,10 +70,10 @@
 
 .battleMessage{
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   border: 2px solid;
   border-color: black;
-  height: 200px;
+  height: 160px;
 }
 
 .border{
@@ -99,4 +113,14 @@
   border-radius: 50%;
   background: rgb(218, 28, 28);
   cursor: pointer;
+}
+
+.notification{
+  bottom: -20%;
+
+  position: absolute;
+
+  color: white;
+  background-color: rgb(218, 28, 28);
+  border:2px solid black;
 }

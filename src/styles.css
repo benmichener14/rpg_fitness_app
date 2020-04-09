@@ -102,20 +102,20 @@ input{
     margin-top: 10%;
     }
   
-  .progress-bar{
+.progress-bar{
     color: #ffffff;
     background-color: #5e0003;
     border: solid #000000;
     
   }
-  .progress{
+.progress{
     height: 25px;
     background-color:#344042;
     margin-top: 5px;
     margin-bottom:10px;
   }
   
-  .percentageLabel{
+.percentageLabel{
     color:#ffffff; 
     text-align: center; 
     width: 90%;
@@ -125,14 +125,14 @@ input{
     z-index: 2;
   }
 
-  .helpButton{
+.helpButton{
     width: 20%;
     display: block;
   margin-left: auto;
   margin-right: auto;
   }
 
-  .btn:hover {
+.btn:hover {
     background-color: inherit;
     color: inherit;
 }

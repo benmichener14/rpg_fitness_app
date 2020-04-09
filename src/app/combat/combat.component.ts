@@ -12,6 +12,10 @@ export class CombatComponent implements OnInit {
 
   storage = window.localStorage;
 
+  startMessage: boolean = true;
+  pHit: boolean = false;
+  eHit: boolean = false;
+
   fighting: boolean = false;
   collapsed: boolean;
   today = formatDate(new Date(), 'yyyy/MM/dd', 'en');
@@ -90,6 +94,10 @@ export class CombatComponent implements OnInit {
   }
 
   action() {
+
+    this.startMessage = false;
+    this.pHit = false;
+    this.eHit = false;
     
     if (this.attackPower == 0 && this.enemyAttack > 0) {
       this.yourHealth -= 1;
@@ -97,6 +105,7 @@ export class CombatComponent implements OnInit {
 
       this.enemyEnergy -= this.enemyAttack;
       this.battleMessage = "You block an enemy attack";
+      this.eHit = true;
     }
     else if (this.attackPower > 0 && this.enemyAttack == 0) {
       this.yourEnergy -= this.attackPower;
@@ -104,6 +113,7 @@ export class CombatComponent implements OnInit {
       this.enemyHealth -= 1;
       this.enemyEnergy += 3;
       this.battleMessage = "The enemy blocks one of your attacks";
+      this.pHit= true;
     }
     else if (this.attackPower == 0 && this.enemyAttack == 0) {
       this.yourEnergy += 3;
@@ -116,6 +126,7 @@ export class CombatComponent implements OnInit {
       this.enemyHealth -= this.attackPower - this.enemyAttack;
       this.enemyEnergy -= this.enemyAttack;
       this.battleMessage = "Your attack overcomes the enemy's, dealing " + (this.attackPower - this.enemyAttack) + " damage";
+      this.pHit = true;
     }
     else if (this.attackPower < this.enemyAttack) {
       this.yourHealth -= this.enemyAttack - this.attackPower;
@@ -123,6 +134,7 @@ export class CombatComponent implements OnInit {
 
       this.enemyEnergy -= this.enemyAttack;
       this.battleMessage = "You are overwhelmed by the enemy's attack and take " + (this.enemyAttack - this.attackPower) + " damage";
+      this.eHit = true;
     }
 
     else if (this.attackPower == this.enemyAttack) {
@@ -169,6 +181,9 @@ export class CombatComponent implements OnInit {
     {
       this.battleMessage = this.battleMessage + ". It looks like the enemy is preparing for a heavy attack."
     }
+    this.startMessage = false;
+    //this.pHit = false;
+    //this.eHit = false;
   }
 
   saveData() {

@@ -70,10 +70,16 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6">
-                                    <img src="././assets/M.png" alt="Enemy" class="yourIcon align-left float">
+                                <div class="col-6" *ngIf="pHit">
+                                    <img src="././assets/M.png" alt="Player" class="yourIcon pHit align-left float">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6" *ngIf="!pHit">
+                                    <img src="././assets/M.png" alt="Player" class="yourIcon align-left float">
+                                </div>
+                                <div class="col-6" *ngIf="eHit">
+                                    <img src="././assets/{{enemyName}}.png" alt="Enemy" class="enemyIcon eHit align-right float">
+                                </div>
+                                <div class="col-6" *ngIf="!eHit">
                                     <img src="././assets/{{enemyName}}.png" alt="Enemy" class="enemyIcon  align-right float">
                                 </div>
                             </div>
@@ -89,6 +95,12 @@
                                 <p class="text-right"><b>{{enemyHealth}}</b><img src="././assets/heart.png" alt="heart" class="iconsmall"></p>
                                 <p class="text-right"><b>{{enemyEnergy}}</b><img src="././assets/energy.png" alt="Energy" class="iconsmall"></p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="startMessage && attackPower == 0">
+                        <div class="col-12">
+                            <p class="notification float">Move the slider to adjust attack power!</p>
                         </div>
                     </div>
 
